@@ -5,18 +5,18 @@ public class MB_CharacterMovement : MonoBehaviour
     /*
      * serialize fields (injection)
      */
-    [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private float _walkSpeed = 5f;
+    [SerializeField] protected Rigidbody _rigidbody;
+    [SerializeField] protected float _walkSpeed = 5f;
     public float WalkSpeed => _walkSpeed;
 
     [Header("I Walk (assign one)")]
-    [SerializeField] private MB_CharacterWalk _walkable;
+    [SerializeField] protected MB_CharacterWalk _walkable;
     // [SerializeField] private PlayerWalk playerWalk;
     // [SerializeField] private AINavMeshWalk aINavMeshWalk;   
 
 
     [Header("I Character Control (assign one)")]
-    [SerializeField] private MB_CharacterControl _characterControl;
+    [SerializeField] protected MB_CharacterControl _characterControl;
     // [SerializeField] private MB_PlayerControl playerControl;
     // [SerializeField] private MB_AIControl aIControl;
 
@@ -26,6 +26,8 @@ public class MB_CharacterMovement : MonoBehaviour
      * fields
      */
 
+
+    public bool OverrideStopWalk { get; set; } = false;
     private void Awake()
     {
         // _walkable = playerWalk != null ? playerWalk : aINavMeshWalk;
@@ -43,7 +45,14 @@ public class MB_CharacterMovement : MonoBehaviour
     }
     void Update()
     {
-        _walkable.SetPosition(_characterControl.TargetDirection);
-        Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+        if (!OverrideStopWalk)
+        {
+            _walkable.SetPosition(_characterControl.TargetDirection);
+        }
+        else
+        {
+            _walkable.SetPosition(Vector3.zero);
+        }
+        // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
     }
 }

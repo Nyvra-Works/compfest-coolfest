@@ -9,6 +9,7 @@ public class MB_AINavMeshWalk : MB_CharacterWalk
     void Start()
     {
         _navMeshAgent.updateRotation = false; // Disable automatic rotation to control rotation manually if needed   
+        _navMeshAgent.speed = GetComponent<MB_CharacterMovement>().WalkSpeed;
     }
     public override void SetPosition(Vector3 direction)
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 public class MB_AIControl : MB_CharacterControl
 {
     public override Vector3 TargetDirection { get; set; }
-    [SerializeField] private TargetsFinderByLayer _targetFinder;
+    [SerializeField] private MB_TargetsFinderByLayer _targetFinder;
     private void Awake()
     {
     }

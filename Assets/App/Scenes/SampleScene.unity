@@ -928,11 +928,12 @@ GameObject:
   - component: {fileID: 883157046}
   - component: {fileID: 883157045}
   - component: {fileID: 883157044}
-  - component: {fileID: 883157043}
   - component: {fileID: 883157042}
   - component: {fileID: 883157041}
   - component: {fileID: 883157040}
   - component: {fileID: 883157048}
+  - component: {fileID: 883157049}
+  - component: {fileID: 883157050}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1012,22 +1013,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &883157043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883157039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ebace1dfd7c749a2e4c871f5bf0f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 883157040}
-  _walkSpeed: 3
-  _walkable: {fileID: 883157048}
-  _characterControl: {fileID: 883157044}
 --- !u!114 &883157044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1108,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 883157041}
+--- !u!114 &883157049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883157039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb64a5ec0cc6d0a4c935b9aa8f5bc4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TargetsFinderByLayer>k__BackingField: {fileID: 824330758}
+  <CharacterMovement>k__BackingField: {fileID: 883157050}
+  <StoppingDistance>k__BackingField: 2
+--- !u!114 &883157050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883157039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cd48f8e62b9e048bd0118ebe5ddc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 883157040}
+  _walkSpeed: 2
+  _walkable: {fileID: 883157048}
+  _characterControl: {fileID: 883157044}
 --- !u!1 &926907302
 GameObject:
   m_ObjectHideFlags: 0
