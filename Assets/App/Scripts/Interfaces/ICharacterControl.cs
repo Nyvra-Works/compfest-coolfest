@@ -6,5 +6,5 @@ using UnityEngine;
 
 public interface ICharacterControl
 {
-    Vector3 LateralMovement { get; }
+    Vector3 TargetDirection { get; }
 }

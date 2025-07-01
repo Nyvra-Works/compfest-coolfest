@@ -3,7 +3,7 @@ using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MB_PlayerControl : MonoBehaviour, ICharacterControl
+public class MB_PlayerControl : MB_CharacterControl
 {
     /*
     * serialize fields (injection)
@@ -15,10 +15,10 @@ public class MB_PlayerControl : MonoBehaviour, ICharacterControl
     */
     // private IWalkable _walkable;
 
-    public Vector3 LateralMovement { get; private set; }
+    public override Vector3 TargetDirection { get; set; }
     void Update()
     {
-        LateralMovement = Input.GetAxisRaw("Horizontal") * Vector3.right + Input.GetAxisRaw("Vertical") * Vector3.forward;
-        LateralMovement.Normalize();
+        TargetDirection = Input.GetAxisRaw("Horizontal") * Vector3.right + Input.GetAxisRaw("Vertical") * Vector3.forward;
+        TargetDirection.Normalize();
     }
 }
