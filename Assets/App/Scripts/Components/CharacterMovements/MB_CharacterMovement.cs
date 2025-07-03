@@ -1,3 +1,4 @@
+using StateMachines.Enemy.States;
 using UnityEngine;
 
 public class MB_CharacterMovement : MonoBehaviour
@@ -27,7 +28,6 @@ public class MB_CharacterMovement : MonoBehaviour
      */
 
 
-    public bool OverrideStopWalk { get; set; } = false;
     private void Awake()
     {
         // _walkable = playerWalk != null ? playerWalk : aINavMeshWalk;
@@ -43,16 +43,10 @@ public class MB_CharacterMovement : MonoBehaviour
             Debug.LogError($"{this.name} Character control is not assigned. Please assign either MB_PlayerControl or MB_AIControl.");
         }
     }
-    void Update()
+    protected virtual void Update()
     {
-        if (!OverrideStopWalk)
-        {
-            _walkable.SetPosition(_characterControl.TargetDirection);
-        }
-        else
-        {
-            _walkable.SetPosition(Vector3.zero);
-        }
+        _walkable.SetPosition(_characterControl.TargetDirection);
         // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
     }
+
 }

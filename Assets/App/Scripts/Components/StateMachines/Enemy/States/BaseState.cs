@@ -4,8 +4,8 @@ namespace StateMachines.Enemy.States
 
     public abstract class BaseState
     {
-        public abstract void Enter(EnemyStateContext context);
-        public abstract void UpdateExecute(EnemyStateContext context);
-        public abstract void Exit(EnemyStateContext context);
+        public abstract void Enter(MB_EnemyStateContext context);
+        public abstract void UpdateExecute(MB_EnemyStateContext context);
+        public abstract void Exit(MB_EnemyStateContext context);
     }
 }
