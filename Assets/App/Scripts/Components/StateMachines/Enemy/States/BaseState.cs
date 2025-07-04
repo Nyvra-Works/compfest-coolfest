@@ -1,11 +1,9 @@
 namespace StateMachines.Enemy.States
 {
+    using StateMachines.Player.States;
     using UnityEngine;
 
-    public abstract class BaseState
+    public abstract class BaseState: AbstractState<MB_EnemyStateContext, StateEnum>
     {
-        public abstract void Enter(MB_EnemyStateContext context);
-        public abstract void UpdateExecute(MB_EnemyStateContext context);
-        public abstract void Exit(MB_EnemyStateContext context);
     }
 }
