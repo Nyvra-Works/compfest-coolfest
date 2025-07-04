@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerHP
   m_EditorClassIdentifier: 
   DesignerDescription: tracks player's hp persistently
-  Value: 0
+  Value: 200
