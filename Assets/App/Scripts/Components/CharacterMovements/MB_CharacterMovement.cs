@@ -17,7 +17,7 @@ public class MB_CharacterMovement : MonoBehaviour
 
 
     [Header("I Character Control (assign one)")]
-    [SerializeField] protected MB_CharacterControl _characterControl;
+    [SerializeField] protected MB_CharacterMovementControl _characterControl;
     // [SerializeField] private MB_PlayerControl playerControl;
     // [SerializeField] private MB_AIControl aIControl;
 
