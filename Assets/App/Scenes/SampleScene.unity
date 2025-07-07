@@ -2208,6 +2208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CharacterMovement>k__BackingField: {fileID: 1955452657}
   <CharacterMovementControl>k__BackingField: {fileID: 1034407066}
+  <CombatInput>k__BackingField: {fileID: 1034407068}
+  <CombatController>k__BackingField: {fileID: 1955452656}
 --- !u!114 &1955452655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,7 +2241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f085c02ad967245915c21f3635e052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _combatInput: {fileID: 1034407068}
   <TargetsFinderForBasicAttack>k__BackingField: {fileID: 180743712}
   <TargetsFinderForSpecialAttack>k__BackingField: {fileID: 0}
   _basicAttack:

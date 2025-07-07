@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 {
-
+    [Header("Movement")]
     [field: SerializeField] public MB_CharacterMovement CharacterMovement { get; private set; }
     [field: SerializeField] public MB_CharacterMovementControl CharacterMovementControl { get; private set; }
+
+    [Header("Combat")]
+    [field: SerializeField] public MB_CombatInput CombatInput { get; private set; }
+    [field: SerializeField] public MB_PlayerAlphaCombatController CombatController { get; private set; }
+    
     public AbstractState<MB_PlayerStateContext> currentState { get; set; }
     public Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> States { get; protected set; } = new()
     {
         { StateEnum.IdleState, new IdleState() },
-        { StateEnum.MovingState, new MovingState() }
+        { StateEnum.MovingState, new MovingState() },
+        { StateEnum.BasicAttackState, new BasicAttackState() }
     };
 
     /// 

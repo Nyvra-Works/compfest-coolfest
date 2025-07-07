@@ -17,10 +17,21 @@ namespace StateMachines.Player.States
 
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
+            // go to moving
             if (context.CharacterMovementControl.TargetDirection != Vector3.zero)
             {
                 context.TransitionToState(StateEnum.MovingState);
             }
+            if (context.CombatInput.IsBasicAttacking)
+            {
+                context.TransitionToState(StateEnum.BasicAttackState);
+            }
         }
+        // void OnInputBasicAttack(MB_PlayerStateContext context)
+        // {
+        //     context.TransitionToState(StateEnum.BasicAttackState);
+        // }
+
+        
     }
 }

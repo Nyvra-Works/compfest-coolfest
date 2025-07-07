@@ -4,6 +4,7 @@ namespace StateMachines.Player.States
 {
     public class MovingState : AbstractState<MB_PlayerStateContext>
     {
+        MB_PlayerMovement _playerMovement;
         public override void Enter(MB_PlayerStateContext context)
         {
             Debug.Log("Entering Moving State");
@@ -16,12 +17,18 @@ namespace StateMachines.Player.States
 
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
-            var characterMovement = (MB_PlayerMovement)context.CharacterMovement;
-            characterMovement.UpdateInState();
-            
+            _playerMovement = (MB_PlayerMovement)context.CharacterMovement;
+            _playerMovement.UpdateInState();
+
             if (context.CharacterMovementControl.TargetDirection == Vector3.zero)
             {
                 context.TransitionToState(StateEnum.IdleState);
+            }
+
+            // allow player to move while moving
+            if (context.CombatInput.IsBasicAttacking)
+            {
+                context.TransitionToState(StateEnum.BasicAttackState);
             }
         }
     }
