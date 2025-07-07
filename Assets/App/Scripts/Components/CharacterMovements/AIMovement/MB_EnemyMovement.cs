@@ -16,7 +16,7 @@ public class MB_EnemyMovement : MB_CharacterMovement
         _enemyStateMachine.OnAttackingEnter -= () => _overrideStopWalk = true;
         _enemyStateMachine.OnAttackingExit -= () => _overrideStopWalk = false;
     }
-    protected override void Update()
+    public override void Update()
     {
 
         if (!_overrideStopWalk)

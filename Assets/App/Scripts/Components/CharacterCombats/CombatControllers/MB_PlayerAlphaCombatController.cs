@@ -7,14 +7,14 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
     [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForBasicAttack { get; private set; }
     [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForSpecialAttack { get; private set; }
     [SerializeField] private BasicAttack _basicAttack;
-    void OnEnable()
-    {
-        _combatInput.BasicAttackEvent += BasicAttackEventInvoked;
-    }
-    void OnDisable()
-    {
-        _combatInput.BasicAttackEvent -= BasicAttackEventInvoked;
-    }
+    // void OnEnable()
+    // {
+    //     _combatInput.BasicAttackEvent += BasicAttackEventInvoked;
+    // }
+    // void OnDisable()
+    // {
+    //     _combatInput.BasicAttackEvent -= BasicAttackEventInvoked;
+    // }
 
     void BasicAttackEventInvoked()
     {

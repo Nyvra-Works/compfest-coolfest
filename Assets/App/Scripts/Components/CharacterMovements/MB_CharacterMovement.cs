@@ -43,7 +43,7 @@ public class MB_CharacterMovement : MonoBehaviour
             Debug.LogError($"{this.name} Character control is not assigned. Please assign either MB_PlayerControl or MB_AIControl.");
         }
     }
-    protected virtual void Update()
+    public virtual void Update()
     {
         _walkable.SetPosition(_characterControl.TargetDirection);
         // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");

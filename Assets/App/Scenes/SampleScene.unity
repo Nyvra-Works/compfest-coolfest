@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 180743710}
   - component: {fileID: 180743709}
   - component: {fileID: 180743712}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: BasicAtkDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 824330761}
   - component: {fileID: 824330760}
   - component: {fileID: 824330759}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,11 +2050,11 @@ GameObject:
   - component: {fileID: 1955452647}
   - component: {fileID: 1955452646}
   - component: {fileID: 1955452645}
-  - component: {fileID: 1955452650}
   - component: {fileID: 1955452652}
   - component: {fileID: 1955452653}
   - component: {fileID: 1955452655}
   - component: {fileID: 1955452656}
+  - component: {fileID: 1955452657}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -2182,22 +2182,6 @@ Transform:
   - {fileID: 180743708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1955452650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955452644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ebace1dfd7c749a2e4c871f5bf0f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1955452645}
-  _walkSpeed: 5
-  _walkable: {fileID: 1955452652}
-  _characterControl: {fileID: 1034407066}
 --- !u!114 &1955452652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1138ed61784ac44c98737cce8ea0d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CharacterMovement>k__BackingField: {fileID: 1955452657}
+  <CharacterMovementControl>k__BackingField: {fileID: 1034407066}
 --- !u!114 &1955452655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2265,6 +2251,22 @@ MonoBehaviour:
       UseConstant: 1
       ConstantValue: 0
       Variable: {fileID: 0}
+--- !u!114 &1955452657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bf6784e642e0d458ff6bf361d8dad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1955452645}
+  _walkSpeed: 5
+  _walkable: {fileID: 1955452652}
+  _characterControl: {fileID: 1034407066}
 --- !u!1001 &5787233561973589166
 PrefabInstance:
   m_ObjectHideFlags: 0
