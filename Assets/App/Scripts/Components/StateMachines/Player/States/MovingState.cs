@@ -7,7 +7,7 @@ namespace StateMachines.Player.States
         MB_PlayerMovement _playerMovement;
         public override void Enter(MB_PlayerStateContext context)
         {
-            Debug.Log("Entering Moving State");
+            // Debug.Log("Entering Moving State");
         }
 
         public override void Exit(MB_PlayerStateContext context)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MB_SceneBoundHealthController : MonoBehaviour, IDamagable
@@ -5,6 +6,7 @@ public class MB_SceneBoundHealthController : MonoBehaviour, IDamagable
     private float _currentHealth;
     [SerializeField] private FloatReference StartingHealth;
     [SerializeField] private bool disableOnZeroHealth = true;
+    public static Action OnDamageTakenHandler;
     private void Start()
     {
         _currentHealth = StartingHealth;
@@ -12,6 +14,7 @@ public class MB_SceneBoundHealthController : MonoBehaviour, IDamagable
 
     public void TakeDamage(float amount)
     {
+        OnDamageTakenHandler?.Invoke();
         _currentHealth -= amount;
     }
 

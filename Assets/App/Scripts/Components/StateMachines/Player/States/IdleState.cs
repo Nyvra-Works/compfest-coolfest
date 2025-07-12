@@ -8,7 +8,7 @@ namespace StateMachines.Player.States
     {
         public override void Enter(MB_PlayerStateContext context)
         {
-            Debug.Log("Entering Idle State");
+            // Debug.Log("Entering Idle State");
         }
 
         public override void Exit(MB_PlayerStateContext context)

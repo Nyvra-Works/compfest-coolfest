@@ -1,17 +1,23 @@
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using StateMachines.Player.States;
 using UnityEngine;
 
 public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 {
     [Header("Movement")]
-    [field: SerializeField] public MB_CharacterMovement CharacterMovement { get; private set; }
-    [field: SerializeField] public MB_CharacterMovementControl CharacterMovementControl { get; private set; }
+    [SerializeField] private MB_CharacterMovement characterMovement;
+    [SerializeField] private MB_CharacterMovementControl characterMovementControl;
+    public MB_CharacterMovement CharacterMovement => characterMovement;
+    public MB_CharacterMovementControl CharacterMovementControl => characterMovementControl;
 
     [Header("Combat")]
-    [field: SerializeField] public MB_CombatInput CombatInput { get; private set; }
-    [field: SerializeField] public MB_PlayerAlphaCombatController CombatController { get; private set; }
-    
+    [SerializeField] private MB_CombatInput combatInput;
+    [SerializeField] private MB_PlayerAlphaCombatController combatController;
+    [SerializeField] private FloatReference basicAttackSpeed;
+    public MB_CombatInput CombatInput => combatInput;
+    public MB_PlayerAlphaCombatController CombatController => combatController;
+    public FloatReference BasicAttackSpeed => basicAttackSpeed;
+
     public AbstractState<MB_PlayerStateContext> currentState { get; set; }
     public Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> States { get; protected set; } = new()
     {

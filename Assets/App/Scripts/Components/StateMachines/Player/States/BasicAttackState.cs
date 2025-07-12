@@ -8,7 +8,7 @@ namespace StateMachines.Player.States
         private MB_PlayerMovement _playerMovement;
         public override void Enter(MB_PlayerStateContext context)
         {
-            Debug.Log("Entering Basic Attack State");
+            // Debug.Log("Entering Basic Attack State");
             context.CombatController.BasicAttackEvent?.Invoke();
 
             // play animasi
@@ -24,7 +24,7 @@ namespace StateMachines.Player.States
             // Kembali ke Idle setelah serangan selesai
             // pake animasi harusnya
             time += Time.deltaTime;
-            if (time > 3f)
+            if (time > context.BasicAttackSpeed)
             {
                 time = 0f;
                 context.TransitionToState(StateEnum.IdleState);

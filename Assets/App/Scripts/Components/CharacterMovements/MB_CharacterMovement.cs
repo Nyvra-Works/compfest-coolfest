@@ -43,10 +43,14 @@ public class MB_CharacterMovement : MonoBehaviour
             Debug.LogError($"{this.name} Character control is not assigned. Please assign either MB_PlayerControl or MB_AIControl.");
         }
     }
-    public virtual void Update()
+    // public virtual void FixedUpdate()
+    // {
+    //     _walkable.SetPosition(_characterControl.TargetDirection);
+    //     // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+    // }
+    public void FullStop()
     {
-        _walkable.SetPosition(_characterControl.TargetDirection);
-        // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+        _walkable.SetPosition(Vector3.zero);
     }
 
 }
