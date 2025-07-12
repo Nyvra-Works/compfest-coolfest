@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MB_AIControl : MB_CharacterControl
+public class MB_AIMovementControl : MB_CharacterMovementControl
 {
     public override Vector3 TargetDirection { get; set; }
     [SerializeField] private MB_TargetsFinderByLayer _targetFinder;
@@ -17,7 +17,7 @@ public class MB_AIControl : MB_CharacterControl
         else
         {
             TargetDirection = Vector3.zero;
-            Debug.LogWarning("No targets found. AI control is inactive.");
+            // Debug.LogWarning("No targets found. AI control is inactive.");
         }
     }
 

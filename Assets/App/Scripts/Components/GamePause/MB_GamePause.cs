@@ -17,11 +17,11 @@ public class MB_GamePause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetButtonDown("Cancel") && !isPaused)
         {
             OnPauseEnter?.Invoke();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        else if (Input.GetButtonDown("Cancel") && isPaused)
         {
             OnPauseExit?.Invoke();
         }

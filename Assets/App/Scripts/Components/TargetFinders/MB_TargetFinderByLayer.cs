@@ -6,7 +6,7 @@ public class MB_TargetsFinderByLayer : MonoBehaviour
 {
     public List<Transform> Targets
     {
-        get => _targets.OrderBy(t => Vector3.Distance(transform.position, t.position))
+        get => _targets?.OrderBy(t => Vector3.Distance(transform.position, t.position))
             .Select(t => t)
             .ToList();
         private set => _targets = value;
@@ -18,17 +18,17 @@ public class MB_TargetsFinderByLayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"OnTriggerEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        // Debug.Log($"OnTriggerEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (IsInTargetLayer(other.gameObject.layer) && !_targets.Contains(other.transform))
         {
             _targets.Add(other.transform);
         }
-        Debug.Log("First Target's position: " + (Targets.Count > 0 ? Targets[0].position.ToString() : "No targets found"));
+        // Debug.Log("First Target's position: " + (Targets.Count > 0 ? Targets[0].position.ToString() : "No targets found"));
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log($"OnTriggerExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        // Debug.Log($"OnTriggerExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (_targets.Contains(other.transform))
         {
             _targets.Remove(other.transform);

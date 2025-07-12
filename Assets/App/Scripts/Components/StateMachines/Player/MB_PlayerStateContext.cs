@@ -1,16 +1,32 @@
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using StateMachines.Player.States;
 using UnityEngine;
 
 public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 {
-    AbstractState<MB_AbstractContext<StateEnum>, StateEnum> _currentState = null;
-    // public IdleState IdleState { get; private set; } = new IdleState();
-    public override Dictionary<StateEnum, AbstractState<MB_AbstractContext<StateEnum>, StateEnum>> States { get; protected set; } = new Dictionary<StateEnum, AbstractState<MB_AbstractContext<StateEnum>, StateEnum>>()
+    [Header("Movement")]
+    [SerializeField] private MB_CharacterMovement characterMovement;
+    [SerializeField] private MB_CharacterMovementControl characterMovementControl;
+    public MB_CharacterMovement CharacterMovement => characterMovement;
+    public MB_CharacterMovementControl CharacterMovementControl => characterMovementControl;
+
+    [Header("Combat")]
+    [SerializeField] private MB_CombatInput combatInput;
+    [SerializeField] private MB_PlayerAlphaCombatController combatController;
+    [SerializeField] private FloatReference basicAttackSpeed;
+    public MB_CombatInput CombatInput => combatInput;
+    public MB_PlayerAlphaCombatController CombatController => combatController;
+    public FloatReference BasicAttackSpeed => basicAttackSpeed;
+
+    public AbstractState<MB_PlayerStateContext> currentState { get; set; }
+    public Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> States { get; protected set; } = new()
     {
         { StateEnum.IdleState, new IdleState() },
         { StateEnum.MovingState, new MovingState() },
+        { StateEnum.BasicAttackState, new BasicAttackState() }
     };
+
+    /// 
     private void Start()
     {
         // Initialize the state machine with the Idle state
@@ -20,17 +36,17 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     private void Update()
     {
         // Update the current state
-        _currentState?.UpdateExecute(this);
+        currentState?.UpdateExecute(this);
     }
     public override void TransitionToState(StateEnum newState)
     {
         // Exit the current state if it exists
-        _currentState?.Exit(this);
+        currentState?.Exit(this);
 
         // Set the new state
-        _currentState = States[newState];
+        currentState = States[newState];
 
         // Enter the new state
-        _currentState.Enter(this);
+        currentState.Enter(this);
     }
 }

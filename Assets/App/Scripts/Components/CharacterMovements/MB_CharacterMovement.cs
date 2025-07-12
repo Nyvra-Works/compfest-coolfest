@@ -17,7 +17,7 @@ public class MB_CharacterMovement : MonoBehaviour
 
 
     [Header("I Character Control (assign one)")]
-    [SerializeField] protected MB_CharacterControl _characterControl;
+    [SerializeField] protected MB_CharacterMovementControl _characterControl;
     // [SerializeField] private MB_PlayerControl playerControl;
     // [SerializeField] private MB_AIControl aIControl;
 
@@ -43,10 +43,14 @@ public class MB_CharacterMovement : MonoBehaviour
             Debug.LogError($"{this.name} Character control is not assigned. Please assign either MB_PlayerControl or MB_AIControl.");
         }
     }
-    protected virtual void Update()
+    // public virtual void FixedUpdate()
+    // {
+    //     _walkable.SetPosition(_characterControl.TargetDirection);
+    //     // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+    // }
+    public void FullStop()
     {
-        _walkable.SetPosition(_characterControl.TargetDirection);
-        // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+        _walkable.SetPosition(Vector3.zero);
     }
 
 }

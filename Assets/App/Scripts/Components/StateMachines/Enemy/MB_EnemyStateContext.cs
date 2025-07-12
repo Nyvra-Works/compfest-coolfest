@@ -8,16 +8,25 @@ public class MB_EnemyStateContext : MonoBehaviour
     public PursuingState PursuingState { get; private set; } = new PursuingState();
     public IdleState IdleState { get; private set; } = new IdleState();
     public AttackingState AttackingState { get; private set; } = new AttackingState();
+    public SoaringState SoaringState { get; private set; } = new SoaringState();
 
-    public Action OnAttackingEnter;
-    public Action OnAttackingExit;
+    // public Action OnAttackingEnter;
+    // public Action OnAttackingExit;
 
-
-    [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderByLayer { get; private set; }
+    [Header("Targets")]
+    [SerializeField] MB_TargetsFinderByLayer _targetsFinderByLayer;
+    public MB_TargetsFinderByLayer TargetsFinderByLayer => _targetsFinderByLayer;
+    [Header("Ground Checker")]
+    [SerializeField] MB_CollisionTargetFinderByLayer _collisionTargetFinderByLayer;
+    public MB_CollisionTargetFinderByLayer CollisionTargetFinderByLayer => _collisionTargetFinderByLayer;
     // [field: SerializeField] public MB_CharacterMovement CharacterMovement { get; private set; }
 
+    [Header("Movement")]
+    [SerializeField] MB_EnemyMovement movement;
+    public MB_EnemyMovement Movement => movement;
     [Header("Attacking State")]
-    [field: SerializeField] public float StoppingDistance { get; private set; } = 2;
+    [SerializeField] float stoppingDistance = 2;
+    public float StoppingDistance => stoppingDistance;
 
     private void Start()
     {
@@ -29,6 +38,10 @@ public class MB_EnemyStateContext : MonoBehaviour
     {
         // Update the current state
         _currentState?.UpdateExecute(this);
+    }
+    private void FixedUpdate()
+    {
+        _currentState?.FixedUpdateExecute(this);
     }
     public void TransitionToState(BaseState newState)
     {

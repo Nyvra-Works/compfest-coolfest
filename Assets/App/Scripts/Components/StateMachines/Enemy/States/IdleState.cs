@@ -13,6 +13,7 @@ namespace StateMachines.Enemy.States
         {
             if (context.TargetsFinderByLayer.Targets.Count > 0)
             {
+                Debug.Log("MEAG");
                 context.TransitionToState(context.PursuingState);
             }
         }

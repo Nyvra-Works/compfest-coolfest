@@ -2,7 +2,7 @@ using System;
 
 namespace StateMachines.Player.States
 {
-    public abstract class AbstractState<Context, EState> where EState : Enum
+    public abstract class AbstractState<Context>
     {
         public abstract void Enter(Context context);
         public abstract void UpdateExecute(Context context);
