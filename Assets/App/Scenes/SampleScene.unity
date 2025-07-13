@@ -669,6 +669,64 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &534358404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534358406}
+  - component: {fileID: 534358405}
+  - component: {fileID: 534358407}
+  m_Layer: 0
+  m_Name: SaveTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &534358405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534358404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c3b3bdf951d85e18e0c7bcbc33be20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 1955452644}
+--- !u!4 &534358406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534358404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.623543, y: -64.16665, z: 120.59456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534358407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534358404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc678f170a7d9986819e05b88a81db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &754394558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2164,7 @@ GameObject:
   - component: {fileID: 1955452655}
   - component: {fileID: 1955452656}
   - component: {fileID: 1955452657}
+  - component: {fileID: 1955452659}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -2327,6 +2386,18 @@ MonoBehaviour:
   _walkSpeed: 500
   _walkable: {fileID: 1955452652}
   _characterControl: {fileID: 1034407066}
+--- !u!114 &1955452659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f219a05b99168a3c87fc1d5719ddd16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5787233561973589166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,3 +2513,4 @@ SceneRoots:
   - {fileID: 883157047}
   - {fileID: 25103173}
   - {fileID: 1909562051}
+  - {fileID: 534358406}
