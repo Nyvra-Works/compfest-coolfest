@@ -1285,6 +1285,7 @@ MonoBehaviour:
   _targetsFinderByLayer: {fileID: 824330758}
   _collisionTargetFinderByLayer: {fileID: 883157053}
   movement: {fileID: 883157050}
+  navMeshAgent: {fileID: 883157041}
   stoppingDistance: 2
 --- !u!114 &883157050
 MonoBehaviour:
