@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 {
-    [Header("Movement")]
+    [Header("# Movement\n=================================================================")]
     [SerializeField] private MB_CharacterMovement characterMovement;
     [SerializeField] private MB_CharacterMovementControl characterMovementControl;
     public MB_CharacterMovement CharacterMovement => characterMovement;
     public MB_CharacterMovementControl CharacterMovementControl => characterMovementControl;
+    [Header("## Ground Checker\n==================================================================")]
+    [SerializeField] private MB_CollisionTargetFinderByLayer groundChecker;
+    public MB_CollisionTargetFinderByLayer CollisionTargetFinder => groundChecker;
 
-    [Header("Combat")]
+    [Space]
+    [Header("# Combat\n==================================================================")]
+    [Space]
     [SerializeField] private MB_CombatInput combatInput;
     [SerializeField] private MB_PlayerAlphaCombatController combatController;
     [SerializeField] private FloatReference basicAttackSpeed;
@@ -23,7 +28,8 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     {
         { StateEnum.IdleState, new IdleState() },
         { StateEnum.MovingState, new MovingState() },
-        { StateEnum.BasicAttackState, new BasicAttackState() }
+        { StateEnum.BasicAttackState, new BasicAttackState() },
+        { StateEnum.HeadbuttAttackState, new HeadbuttAttackState() }
     };
 
     /// 

@@ -5,6 +5,7 @@ namespace StateMachines.Player.States
     {
         IdleState = 0,
         MovingState = 1,
-        BasicAttackState = 2
+        BasicAttackState = 2,
+        HeadbuttAttackState = 3
     }
 }

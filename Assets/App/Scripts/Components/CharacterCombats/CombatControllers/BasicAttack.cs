@@ -2,16 +2,11 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class BasicAttack
+public class BasicAttack : IDamageDealer
 {
     [field: SerializeField] public FloatReference Damage { get; private set; }
     [field: SerializeField] public FloatReference Knockback { get; private set; }
     [field: SerializeField] public FloatReference ElevationMofifier { get; private set; }
-    private DamageDealer _damageDealer;
-    private void Start()
-    {
-        _damageDealer = new DamageDealer(Damage);
-    }
 
     public void DealDamage(Transform[] targets, Transform myTransform)
     {

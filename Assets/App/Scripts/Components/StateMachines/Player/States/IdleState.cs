@@ -22,9 +22,17 @@ namespace StateMachines.Player.States
             {
                 context.TransitionToState(StateEnum.MovingState);
             }
+
+            // allow player to basic attack
             if (context.CombatInput.IsBasicAttacking)
             {
                 context.TransitionToState(StateEnum.BasicAttackState);
+            }
+
+            // allow player to headbutt attack
+            if (context.CombatInput.IsSpecial1Attacking)
+            {
+                context.TransitionToState(StateEnum.HeadbuttAttackState);
             }
         }
         // void OnInputBasicAttack(MB_PlayerStateContext context)
