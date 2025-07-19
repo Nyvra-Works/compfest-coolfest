@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// SerializableVector3 is used to serialize Vector3 positions for saving and loading game state.
+// It can be used for storing player position, enemies, and etc.
 [System.Serializable]
 public class SerializableVector3
 {

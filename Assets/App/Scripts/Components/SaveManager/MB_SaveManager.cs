@@ -23,6 +23,7 @@ public class MB_SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
+
         Dictionary<string, string> saveState = new();
 
         foreach (MonoBehaviour mb in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
@@ -34,38 +35,47 @@ public class MB_SaveManager : MonoBehaviour
             }
         }
 
-        string jsonWrapper = JsonUtility.ToJson(new SerializationWrapper(saveState), true);
+        var currentSaveState = new SerializationWrapper(saveState);
+        string jsonWrapper = JsonUtility.ToJson(currentSaveState, true);
         File.WriteAllText(_savePath, jsonWrapper);
 
-        Debug.Log("Saved to: " + _savePath);
+        Debug.Log("Saved to: " + _savePath + " at " + currentSaveState.savedTime);
     }
 
     public void LoadGame()
     {
-        if (!File.Exists(_savePath)) return;
+        if (!File.Exists(_savePath))
+        {
+            Debug.LogWarning("Save file not found at: " + _savePath);
+            return;   
+        }
 
         string json = File.ReadAllText(_savePath);
-        Dictionary<string, string> state = JsonUtility.FromJson<SerializationWrapper>(json).ToDictionary();
+        var loadedData = JsonUtility.FromJson<SerializationWrapper>(json);
+        Dictionary<string, string> state = loadedData.ToDictionary();
 
         foreach (MonoBehaviour mb in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
         {
             if (mb is ISaveable saveable && state.TryGetValue(saveable.GetType().ToString(), out string savedJson))
             {
-                saveable.RestoreState(savedJson); // Pass JSON string directly
+                saveable.RestoreState(savedJson);
             }
         }
 
-        Debug.Log("Game loaded.");
+        Debug.Log("Game loaded." + " Last saved at: " + loadedData.savedTime);
     }
 
+    //not really SOLID, but for simplicity in saving/loading dictionaries h3h3
     [System.Serializable]
     private class SerializationWrapper
     {
+        public string savedTime;
         public List<string> keys = new();
         public List<string> values = new();
 
         public SerializationWrapper(Dictionary<string, string> dict)
         {
+            savedTime = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             foreach (var pair in dict)
             {
                 keys.Add(pair.Key);
