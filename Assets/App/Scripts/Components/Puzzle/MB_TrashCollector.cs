@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashCollector : MonoBehaviour, IPuzzleTrigger
+public class MB_TrashCollector : MB_AbstractPuzzleBase, IPuzzleTimeLimit
 {
     [SerializeField] private GameObject _gameObjectTriggerer;
+
+    [Header("Puzzle Time Limit")]
+    [SerializeField] private float _puzzleDuration;
+    public float PuzzleDuration => _puzzleDuration;
 
     [Header("Trash Collection Containers")]
     [SerializeField] private GameObject _organicTrashContainer;
@@ -18,17 +22,29 @@ public class TrashCollector : MonoBehaviour, IPuzzleTrigger
     private bool isOrganicTrashCollected = false;
     private bool isAnorganicTrashCollected = false;
 
-    [SerializeField] private bool isPuzzleFinished = false;
+    private readonly Dictionary<GameObject, Vector3> _initialPositions = new();
 
-    public static event Action OnTrashCollectorFinished;
+    private void Awake()
+    {
+        foreach (var trash in _organicTrashObjects)
+        {
+            _initialPositions[trash] = trash.transform.position;
+        }
 
-    public void TriggerPuzzle()
+        foreach (var trash in _anorganicTrashObjects)
+        {
+            _initialPositions[trash] = trash.transform.position;
+        }
+    }
+
+    public override void TriggerPuzzle()
     {
         if (_gameObjectTriggerer != null)
         {
             if (!isPuzzleFinished)
             {
                 Debug.Log("Triggering Trash Collection Puzzle...");
+                MB_PuzzleTimerManager.Instance.StartTimer(this);
                 TrashCollection();
             }
             else
@@ -42,17 +58,38 @@ public class TrashCollector : MonoBehaviour, IPuzzleTrigger
         }
     }
 
-    public void ResetPuzzle()
+    public override void ResetPuzzle()
     {
-        
-    }
-
-    public void OnPuzzleFinished()
-    {
+        isPuzzleFinished = false;
         StopAllCoroutines();
-        isPuzzleFinished = true;
-        OnTrashCollectorFinished?.Invoke();
-        Debug.Log("Puzzle Finished!");
+
+        isOrganicTrashCollected = false;
+        isAnorganicTrashCollected = false;
+
+        _organicTrashObjects.Clear();
+        _anorganicTrashObjects.Clear();
+
+        foreach (var kvp in _initialPositions)
+        {
+            if (kvp.Key != null)
+            {
+                kvp.Key.transform.position = kvp.Value;
+            }
+        }
+
+        foreach (var obj in _initialPositions.Keys)
+        {
+            if (obj.CompareTag("OrganicTrash"))
+            {
+                _organicTrashObjects.Add(obj);
+            }
+            else if (obj.CompareTag("AnorganicTrash"))
+            {
+                _anorganicTrashObjects.Add(obj);
+            }
+        }
+
+        Debug.Log("Trash Collection Puzzle has been reset.");
     }
 
     public void TrashCollection()
@@ -119,4 +156,9 @@ public class TrashCollector : MonoBehaviour, IPuzzleTrigger
         OnPuzzleFinished();
     }
 
+    public void OnPuzzleTimeout()
+    {
+        Debug.Log("Puzzle timed out! Resetting puzzle.");
+        ResetPuzzle();
+    }
 }
