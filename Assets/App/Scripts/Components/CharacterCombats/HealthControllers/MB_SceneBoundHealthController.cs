@@ -7,6 +7,7 @@ public class MB_SceneBoundHealthController : MonoBehaviour, IDamagable
     [SerializeField] private FloatReference StartingHealth;
     [SerializeField] private bool disableOnZeroHealth = true;
     public static Action OnDamageTakenHandler;
+
     private void Start()
     {
         _currentHealth = StartingHealth;

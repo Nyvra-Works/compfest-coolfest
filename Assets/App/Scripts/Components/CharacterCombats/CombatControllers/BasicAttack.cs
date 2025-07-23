@@ -25,6 +25,12 @@ public class BasicAttack : IDamageDealer
             // give damage to IDamagable
             target.GetComponent<IDamagable>()?.TakeDamage(Damage.Value);
 
+            // send my enum
+            // TODO
+            target.GetComponent<ICombatReceiver>()?.ReceiveCombatEvent(
+                // CombatEventType.BasicAttack
+            ); 
+
         }
     }
 }

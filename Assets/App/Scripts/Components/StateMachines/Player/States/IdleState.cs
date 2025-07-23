@@ -32,7 +32,7 @@ namespace StateMachines.Player.States
             // allow player to headbutt attack
             if (context.CombatInput.IsSpecial1Attacking)
             {
-                context.TransitionToState(StateEnum.HeadbuttAttackState);
+                context.TransitionToState(StateEnum.HeadbuttAttackAscendingState);
             }
         }
         // void OnInputBasicAttack(MB_PlayerStateContext context)
