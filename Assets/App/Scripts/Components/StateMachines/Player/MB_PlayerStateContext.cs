@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using StateMachines.Player.States;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     [SerializeField] private MB_CombatInput combatInput;
     [SerializeField] private MB_PlayerAlphaCombatController combatController;
     [SerializeField] private FloatReference basicAttackSpeed;
+    [SerializeField] private MB_HeadbuttMovement headbuttMovement;
     public MB_CombatInput CombatInput => combatInput;
     public MB_PlayerAlphaCombatController CombatController => combatController;
     public FloatReference BasicAttackSpeed => basicAttackSpeed;
@@ -31,6 +33,13 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 
     [SerializeField] private MB_TargetFinder headButtTargetFinder;
     public MB_TargetFinder HeadButtTargetFinder => headButtTargetFinder;
+
+
+    public Rigidbody Rigidbody{ get; set; }
+
+    // Delegates definition =========================================================================
+    public Action HeadbuttJumpHandler;
+
 
     /// <summary>
     /// States of the machine, keyed with their respective StateEnum.
@@ -50,6 +59,7 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     {
         // Initialize the state machine with the Idle state
         TransitionToState(_initialState);
+        Rigidbody = GetComponent<Rigidbody>();
 
     }
     private void Update()

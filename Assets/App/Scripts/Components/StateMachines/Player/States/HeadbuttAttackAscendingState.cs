@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace StateMachines.Player.States
@@ -7,7 +8,9 @@ namespace StateMachines.Player.States
         public override void Enter(MB_PlayerStateContext context)
         {
             Debug.Log("Entering Headbutt Attack Ascending State");
+            context.HeadbuttJumpHandler?.Invoke();
         }
+
 
         public override void Exit(MB_PlayerStateContext context)
         {
@@ -19,6 +22,11 @@ namespace StateMachines.Player.States
             if (context.HeadButtTargetFinder.HasTargets())
             {
                 Debug.Log("I just headbutt something valid, transitioning to descending state.", context.gameObject);
+                context.TransitionToState(StateEnum.HeadbuttAttackDescendingState);
+            }
+            if (context.Rigidbody.linearVelocity.y <= 0)
+            {
+                Debug.Log("I am no longer ascending, transitioning to descending state.", context.gameObject);
                 context.TransitionToState(StateEnum.HeadbuttAttackDescendingState);
             }
         }

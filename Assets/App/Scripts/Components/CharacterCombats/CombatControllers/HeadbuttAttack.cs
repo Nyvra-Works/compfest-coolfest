@@ -7,7 +7,6 @@ public class HeadbuttAttack: IDamageDealer
     [SerializeField] FloatReference _damage;
     public FloatReference Damage => _damage;
     [SerializeField] FloatReference _maximumHeight;
-    public FloatReference MaximumHeight => _maximumHeight;
     
     public void DealDamage(Transform[] targets, Transform myTransform)
     {

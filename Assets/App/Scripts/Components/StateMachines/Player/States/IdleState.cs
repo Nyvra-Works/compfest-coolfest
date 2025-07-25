@@ -34,6 +34,7 @@ namespace StateMachines.Player.States
             {
                 context.TransitionToState(StateEnum.HeadbuttAttackAscendingState);
             }
+
         }
         // void OnInputBasicAttack(MB_PlayerStateContext context)
         // {
