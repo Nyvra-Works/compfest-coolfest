@@ -8,20 +8,29 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
     [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForSpecialAttack { get; private set; }
 
 
-
+    [Header("Attack Scripts")]
     [SerializeField] private BasicAttack _basicAttack;
     [SerializeField] private HeadbuttAttack _headbuttAttack;
+
+    [Header("State Machine Context")]
+    [SerializeField] private MB_PlayerStateContext _stateContext;
     void OnEnable()
     {
         // _combatInput.BasicAttackEvent += BasicAttackEventInvoked;
         BasicAttackEvent += BasicAttackEventInvoked;
         HeadbuttAttackEvent += HeadbuttAttackEventInvoked;
+
+
+        _stateContext.HeadbuttStayAscendingHandler += HeadbuttAttackEventInvoked;
     }
     void OnDisable()
     {
         // _combatInput.BasicAttackEvent -= BasicAttackEventInvoked;
         BasicAttackEvent -= BasicAttackEventInvoked;
         HeadbuttAttackEvent -= HeadbuttAttackEventInvoked;
+
+        _stateContext.HeadbuttStayAscendingHandler -= HeadbuttAttackEventInvoked;
+
     }
 
     public Action BasicAttackEvent;

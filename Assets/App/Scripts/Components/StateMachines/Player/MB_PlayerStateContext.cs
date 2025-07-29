@@ -20,7 +20,6 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     [SerializeField] private MB_CombatInput combatInput;
     [SerializeField] private MB_PlayerAlphaCombatController combatController;
     [SerializeField] private FloatReference basicAttackSpeed;
-    [SerializeField] private MB_HeadbuttMovement headbuttMovement;
     public MB_CombatInput CombatInput => combatInput;
     public MB_PlayerAlphaCombatController CombatController => combatController;
     public FloatReference BasicAttackSpeed => basicAttackSpeed;
@@ -39,6 +38,7 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 
     // Delegates definition =========================================================================
     public Action HeadbuttJumpHandler;
+    public Action HeadbuttStayAscendingHandler;
 
 
     /// <summary>

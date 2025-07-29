@@ -1,14 +1,18 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace StateMachines.Player.States
 {
     public class HeadbuttAttackAscendingState : AbstractState<MB_PlayerStateContext>
     {
+        float _time = 0;
         public override void Enter(MB_PlayerStateContext context)
         {
             Debug.Log("Entering Headbutt Attack Ascending State");
             context.HeadbuttJumpHandler?.Invoke();
+
+            _time = 0;
         }
 
 
@@ -19,6 +23,14 @@ namespace StateMachines.Player.States
 
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
+            // Invoke this so the headbutt damage can be dealt
+            context.HeadbuttStayAscendingHandler?.Invoke();
+
+            _time += Time.deltaTime;
+            if (_time < 1)
+            {
+                return;
+            }
             if (context.HeadButtTargetFinder.HasTargets())
             {
                 Debug.Log("I just headbutt something valid, transitioning to descending state.", context.gameObject);
