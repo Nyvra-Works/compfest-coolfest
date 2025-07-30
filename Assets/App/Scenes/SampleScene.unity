@@ -2364,8 +2364,9 @@ GameObject:
   - component: {fileID: 1952135325}
   - component: {fileID: 1952135324}
   - component: {fileID: 1952135328}
+  - component: {fileID: 1952135329}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: HeadbuttTargetCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2477,6 +2478,31 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 0}
   disableOnZeroHealth: 1
+--- !u!114 &1952135329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952135323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889eade88b5bfaa4f8faeb26484b4f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 21300000, guid: 05ff8020df6defd42ba5e74b4084f5b9, type: 3}
+  _projectionSurfaceLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _projectionSize:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  _maxProjectionDistance:
+    UseConstant: 1
+    ConstantValue: Infinity
+    Variable: {fileID: 0}
+  _heading: {x: 0, y: -1, z: 0}
 --- !u!1 &1955452644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1138ed61784ac44c98737cce8ea0d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialState: 3
+  _initialState: 0
   characterMovement: {fileID: 1955452657}
   characterMovementControl: {fileID: 1034407066}
   combatInput: {fileID: 1034407068}
