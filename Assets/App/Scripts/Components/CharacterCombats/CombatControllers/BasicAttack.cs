@@ -28,7 +28,7 @@ public class BasicAttack : IDamageDealer
             // send my enum
             // TODO
             target.GetComponent<ICombatReceiver>()?.ReceiveCombatEvent(
-                // CombatEventType.BasicAttack
+                CombatEventType.BasicAttack
             ); 
 
         }

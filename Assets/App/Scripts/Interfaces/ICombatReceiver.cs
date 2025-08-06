@@ -1,4 +1,4 @@
 public interface ICombatReceiver
 {
-    void ReceiveCombatEvent();
+    void ReceiveCombatEvent(CombatEventType combatEventType);
 }

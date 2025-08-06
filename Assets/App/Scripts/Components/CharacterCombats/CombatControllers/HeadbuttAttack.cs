@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeadbuttAttack: IDamageDealer
 {
     [SerializeField] FloatReference _damage;
+    CombatEventType _combatEventType = CombatEventType.HeadbuttAttack;
     public FloatReference Damage => _damage;
 
     public void DealDamage(Transform[] targets, Transform myTransform)
@@ -20,8 +21,7 @@ public class HeadbuttAttack: IDamageDealer
 
             // send my enum
             target.GetComponent<ICombatReceiver>()?.ReceiveCombatEvent(
-                // TODO
-                // CombatEventType.BasicAttack
+                _combatEventType
             ); 
 
         }
