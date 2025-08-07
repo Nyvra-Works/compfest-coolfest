@@ -40,6 +40,8 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     public Action HeadbuttJumpHandler;
     public Action HeadbuttStayAscendingHandler;
 
+    public Action OnEnterJumpHandler;
+
 
     /// <summary>
     /// States of the machine, keyed with their respective StateEnum.
@@ -52,6 +54,8 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
         { StateEnum.BasicAttackState, new BasicAttackState() },
         { StateEnum.HeadbuttAttackAscendingState, new HeadbuttAttackAscendingState() },
         { StateEnum.HeadbuttAttackDescendingState, new HeadbuttAttackDescendingState() },
+        { StateEnum.JumpAscendingState, new JumpAscendingState() },
+        { StateEnum.JumpDescendingState, new JumpDescendingState() }
     };
 
     /// 

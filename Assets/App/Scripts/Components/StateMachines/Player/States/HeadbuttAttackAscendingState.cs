@@ -10,6 +10,9 @@ namespace StateMachines.Player.States
         public override void Enter(MB_PlayerStateContext context)
         {
             Debug.Log("Entering Headbutt Attack Ascending State");
+            // stop any horizontal movement
+            context.CharacterMovement.FullStop();
+
             context.HeadbuttJumpHandler?.Invoke();
 
             _time = 0;

@@ -7,4 +7,5 @@ using UnityEngine;
 public interface ICharacterMovementControl
 {
     Vector3 TargetDirection { get; }
+    
 }

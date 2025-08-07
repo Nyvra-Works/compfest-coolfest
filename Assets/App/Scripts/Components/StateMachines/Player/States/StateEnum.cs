@@ -8,5 +8,7 @@ namespace StateMachines.Player.States
         BasicAttackState = 2,
         HeadbuttAttackAscendingState = 3,
         HeadbuttAttackDescendingState = 4,
+        JumpAscendingState = 5,
+        JumpDescendingState = 6
     }
 }

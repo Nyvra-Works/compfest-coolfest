@@ -19,7 +19,12 @@ public class BasicAttack : IDamageDealer
             // apply knockback
             Vector3 direction = (target.transform.position - myTransform.position);
             direction.y += ElevationMofifier;
-            target.GetComponent<Rigidbody>().AddForce(direction.normalized * Knockback, ForceMode.Impulse);
+
+            if (target.TryGetComponent<Rigidbody>(out var rigidbody))
+            {
+                rigidbody.AddForce(direction.normalized * Knockback, ForceMode.Impulse);
+            }
+            // target.GetComponent<Rigidbody>().AddForce(direction.normalized * Knockback, ForceMode.Impulse);
 
 
             // give damage to IDamagable

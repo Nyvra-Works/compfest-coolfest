@@ -32,13 +32,13 @@ namespace PuzzleInteraction.InteractionReceiver
         float time = 0;
         public void ReceiveCombatEvent(CombatEventType combatEventType)
         {
-            time += Time.deltaTime;
+            time -= Time.deltaTime;
 
-            if (time < _toggleCooldownDuration)
+            if (time > 0)
             {
                 return;
             }
-            time = 0;
+            time = _toggleCooldownDuration;
 
 
             if (combatEventType == _acceptedCombatEventType)

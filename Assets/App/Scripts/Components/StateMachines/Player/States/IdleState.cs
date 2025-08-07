@@ -35,6 +35,11 @@ namespace StateMachines.Player.States
                 context.TransitionToState(StateEnum.HeadbuttAttackAscendingState);
             }
 
+            if (Input.GetButtonDown("Jump"))
+            {
+                context.TransitionToState(StateEnum.JumpAscendingState);
+            }
+
         }
         // void OnInputBasicAttack(MB_PlayerStateContext context)
         // {
