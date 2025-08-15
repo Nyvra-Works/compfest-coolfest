@@ -2169,6 +2169,7 @@ GameObject:
   - component: {fileID: 1224526139}
   - component: {fileID: 1224526138}
   - component: {fileID: 1224526137}
+  - component: {fileID: 1224526140}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -2265,6 +2266,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224526135}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1224526140
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224526135}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1262598540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658829021}
   - component: {fileID: 1658829022}
+  - component: {fileID: 1658829023}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -2832,6 +2850,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1658829023
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658829020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c25274b9b461d8f49904c956084cca5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1806087888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,6 +3389,7 @@ GameObject:
   - component: {fileID: 1955452659}
   - component: {fileID: 1955452660}
   - component: {fileID: 1955452661}
+  - component: {fileID: 1955452662}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -3653,6 +3694,21 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 0}
   _stateContext: {fileID: 1955452653}
+--- !u!114 &1955452662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d22385e3b51db149b735750da6d4b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1658829023}
+  _spriteRenderer: {fileID: 1658829022}
+  _playerStateContext: {fileID: 1955452653}
 --- !u!1 &2030501307
 GameObject:
   m_ObjectHideFlags: 0

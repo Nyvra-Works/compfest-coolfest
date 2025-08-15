@@ -10,17 +10,22 @@ namespace StateMachines.Player.States
             // Debug.Log("Entering Moving State");
 
             _playerMovement = (MB_PlayerMovement)context.CharacterMovement;
+
+            context.IsMovingHandler?.Invoke(true);
         }
 
         public override void Exit(MB_PlayerStateContext context)
         {
-
+            context.IsMovingHandler?.Invoke(false);
         }
 
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
             // allow player to move
             _playerMovement.UpdateInState();
+
+            // send direction for animation handling
+            context.SetAnimationDirectionHandler?.Invoke(context.CharacterMovementControl.TargetDirection);
 
             if (context.CharacterMovementControl.TargetDirection == Vector3.zero)
             {
