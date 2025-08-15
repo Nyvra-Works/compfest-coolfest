@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe73fa4c-b1da-4e12-a644-027720b8f1e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/App/New Material 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/New Material 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Prefabs/Collectible.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Prefabs/Collectible.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/Enums.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/Enums/CombatEventType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/Enums/CombatEventType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/HeadbuttAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/HeadbuttAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/MovementsInCombat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/MovementsInCombat/MB_HeadbuttMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/MovementsInCombat/MB_HeadbuttMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerJump.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerJump.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/Collectibles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/Collectibles/MB_Collectible.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/Collectibles/MB_Collectible.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/Collectibles/MB_CollectibleEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/Collectibles/MB_CollectibleEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/ObjectPooling.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/ObjectPooling/MB_CollectiblePool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/ObjectPooling/MB_CollectiblePool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/ObjectPooling/MB_GenericObjectPool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/ObjectPooling/MB_GenericObjectPool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_AbstractController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_AbstractController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_ColorChange.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_ColorChange.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_MoveLalalalala.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Controllers/MB_MoveLalalalala.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Enums.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Enums/ReceiverMode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/Enums/ReceiverMode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver/Combat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver/Combat/MB_WorldButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver/Combat/MB_WorldButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver/MB_AbstractInteractionReceiver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/PuzzleInteraction/InteractionReceiver/MB_AbstractInteractionReceiver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/HeadbuttAttackAscendingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/HeadbuttAttackAscendingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/HeadbuttAttackDescendingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/HeadbuttAttackDescendingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/JumpAscendingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/JumpAscendingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/JumpDescendingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/JumpDescendingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/MB_TargetFinder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/MB_TargetFinder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/TriggerTargetFinders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetImageProjection.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetImageProjection/MB_ProjectImage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetImageProjection/MB_ProjectImage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Editor/FloatReferenceDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Editor/FloatReferenceDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/ICombatReceiver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/ICombatReceiver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IDamageDealer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IDamageDealer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IPoolable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IPoolable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/MB_CurrentStateUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Scripts/MB_CurrentStateUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/Untitled824_20250508142624.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/Untitled824_20250508142624.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.sequences/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/BasicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/BasicAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/DamageDealer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/DamageDealer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/MB_PlayerAlphaCombatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/CombatControllers/MB_PlayerAlphaCombatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/HealthControllers/MB_PersistentHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/HealthControllers/MB_PersistentHealthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/HealthControllers/MB_SceneBoundHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterCombats/HealthControllers/MB_SceneBoundHealthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/AIMovement/MB_EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/AIMovement/MB_EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/MB_CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/MB_CharacterMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/MB_CharacterWalk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/MB_CharacterWalk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/CharacterMovements/PlayerMovement/MB_PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CollisionTargetFinders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/CollisionTargetFinders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CollisionTargetFinders/MB_CollisionTargetFinderByLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/CollisionTargetFinders/MB_CollisionTargetFinderByLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/CollisionTargetFinders/MB_CollisionTargetFinderByLayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/CollisionTargetFinders/MB_CollisionTargetFinderByLayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/GamePause/MB_GamePause.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/GamePause/MB_GamePause.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/MB_EnemyStateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/MB_EnemyStateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/States/PursuingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/States/PursuingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/States/SoaringState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Enemy/States/SoaringState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/MB_PlayerStateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/MB_PlayerStateContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/MovingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/MovingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/StateEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/StateMachines/Player/States/StateEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/MB_TargetFinderByLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/TriggerTargetFinders/MB_TargetFinderByLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/MB_TargetFinderByLayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Components/TargetFinders/TriggerTargetFinders/MB_TargetFinderByLayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/ICharacterControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/ICharacterControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IWalk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Scripts/Interfaces/IWalk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/Scripts/Services/Bootstraps.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_curiousIdleBreaker.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_curiousIdleBreaker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_curiousIdleBreaker.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_curiousIdleBreaker.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_sleepyIdleBreaker.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_sleepyIdleBreaker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_sleepyIdleBreaker.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_sleepyIdleBreaker.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_walk.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_walk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/App/SpriteDev/calicoKitty_walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/App/Sprites/Dumps/SpriteDev/calicoKitty_walk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="31KDIlXyRVCTjQaFk01j7hgI9iK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Merging various__features-Daffa",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/6000.0.51f1/Editor/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/6000.0.51f1/Editor/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Device" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe73fa4c-b1da-4e12-a644-027720b8f1e3" name="Changes" comment="" />
+      <created>1755263795846</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755263795846</updated>
+      <workItem from="1755263795857" duration="1203000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

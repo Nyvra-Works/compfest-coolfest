@@ -1,6 +1,7 @@
 using System;
 using StateMachines.Enemy.States;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MB_EnemyStateContext : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class MB_EnemyStateContext : MonoBehaviour
     [Header("Movement")]
     [SerializeField] MB_EnemyMovement movement;
     public MB_EnemyMovement Movement => movement;
+    [SerializeField] NavMeshAgent navMeshAgent;
+    public NavMeshAgent NavMeshAgent => navMeshAgent;
     [Header("Attacking State")]
     [SerializeField] float stoppingDistance = 2;
     public float StoppingDistance => stoppingDistance;

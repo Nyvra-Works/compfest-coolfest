@@ -8,7 +8,7 @@ namespace StateMachines.Enemy.States
     {
         IEnumerator CheckCollisionWithGround(MB_EnemyStateContext context)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.1f);
             if (context.CollisionTargetFinderByLayer.Targets.Count > 0)
             {
                 // context.TransitionToState(context.IdleState);

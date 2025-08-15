@@ -20,7 +20,7 @@ public class MB_EnemyMovement : MB_CharacterMovement
     public void UpdateInState()
     {
         // base.FixedUpdate();
-        _walkable.SetPosition(_characterControl.TargetDirection);
+        _locomotory.SetPosition(_characterControl.TargetDirection);
 
     }
 }

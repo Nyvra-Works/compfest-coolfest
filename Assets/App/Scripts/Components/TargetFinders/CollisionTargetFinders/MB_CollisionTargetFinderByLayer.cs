@@ -1,24 +1,26 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Linq;
 
-public class MB_TargetsFinderByLayer : MonoBehaviour
+public class MB_CollisionTargetFinderByLayer : MB_TargetFinder
 {
-    public List<Transform> Targets
+
+    public override List<Transform> Targets
     {
         get => _targets?.OrderBy(t => Vector3.Distance(transform.position, t.position))
             .Select(t => t)
             .ToList();
-        private set => _targets = value;
+        set => _targets = value;
     }
+    public override bool HasTargets() => _targets != null && _targets.Count > 0;
     private List<Transform> _targets = new List<Transform>();
 
     [SerializeField] private LayerMask _targetLayer;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        // Debug.Log($"OnTriggerEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        Debug.Log($"OnCollisionEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (IsInTargetLayer(other.gameObject.layer) && !_targets.Contains(other.transform))
         {
             _targets.Add(other.transform);
@@ -26,9 +28,9 @@ public class MB_TargetsFinderByLayer : MonoBehaviour
         // Debug.Log("First Target's position: " + (Targets.Count > 0 ? Targets[0].position.ToString() : "No targets found"));
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
-        // Debug.Log($"OnTriggerExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        Debug.Log($"OnCollisionExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (_targets.Contains(other.transform))
         {
             _targets.Remove(other.transform);

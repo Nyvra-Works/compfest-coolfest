@@ -1,4 +1,6 @@
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StateMachines.Enemy.States
 {
@@ -7,6 +9,11 @@ namespace StateMachines.Enemy.States
         public override void Enter(MB_EnemyStateContext context)
         {
             Debug.Log("Entering Pursuing State");
+            ResetNavMeshDestination(context);
+        }
+        void ResetNavMeshDestination(MB_EnemyStateContext context)
+        {
+            context.NavMeshAgent.SetDestination(context.transform.position);
         }
 
         public override void UpdateExecute(MB_EnemyStateContext context)

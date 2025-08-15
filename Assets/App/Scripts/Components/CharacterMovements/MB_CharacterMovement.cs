@@ -11,7 +11,7 @@ public class MB_CharacterMovement : MonoBehaviour
     public float WalkSpeed => _walkSpeed;
 
     [Header("I Walk (assign one)")]
-    [SerializeField] protected MB_CharacterWalk _walkable;
+    [SerializeField] protected MB_CharacterWalk _locomotory;
     // [SerializeField] private PlayerWalk playerWalk;
     // [SerializeField] private AINavMeshWalk aINavMeshWalk;   
 
@@ -31,7 +31,7 @@ public class MB_CharacterMovement : MonoBehaviour
     private void Awake()
     {
         // _walkable = playerWalk != null ? playerWalk : aINavMeshWalk;
-        if (_walkable == null)
+        if (_locomotory == null)
         {
             Debug.LogError($"{this.name} Walkable is not assigned. Please assign either PlayerWalk or AINavMeshWalk.");
             return;
@@ -50,7 +50,7 @@ public class MB_CharacterMovement : MonoBehaviour
     // }
     public void FullStop()
     {
-        _walkable.SetPosition(Vector3.zero);
+        _locomotory.SetPosition(Vector3.zero);
     }
 
 }

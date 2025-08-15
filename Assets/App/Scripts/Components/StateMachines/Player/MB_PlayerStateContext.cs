@@ -1,36 +1,69 @@
- using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using StateMachines.Player.States;
 using UnityEngine;
 
 public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 {
-    [Header("Movement")]
+    [SerializeField] private StateEnum _initialState = StateEnum.IdleState;
+    [Space]
+    [Header("# Movement\n=================================================================")]
+    [Space]
     [SerializeField] private MB_CharacterMovement characterMovement;
     [SerializeField] private MB_CharacterMovementControl characterMovementControl;
     public MB_CharacterMovement CharacterMovement => characterMovement;
     public MB_CharacterMovementControl CharacterMovementControl => characterMovementControl;
 
-    [Header("Combat")]
+    [Space]
+    [Header("# Combat\n==================================================================")]
+    [Space]
     [SerializeField] private MB_CombatInput combatInput;
     [SerializeField] private MB_PlayerAlphaCombatController combatController;
     [SerializeField] private FloatReference basicAttackSpeed;
     public MB_CombatInput CombatInput => combatInput;
     public MB_PlayerAlphaCombatController CombatController => combatController;
     public FloatReference BasicAttackSpeed => basicAttackSpeed;
-
     public AbstractState<MB_PlayerStateContext> currentState { get; set; }
+
+
+    [Header("## Collision Checker\n==================================================================")]
+    [SerializeField] private MB_TargetFinder groundTargetFinder;
+    public MB_TargetFinder GroundTargetFinder => groundTargetFinder;
+
+    [SerializeField] private MB_TargetFinder headButtTargetFinder;
+    public MB_TargetFinder HeadButtTargetFinder => headButtTargetFinder;
+
+
+    public Rigidbody Rigidbody{ get; set; }
+
+    // Delegates definition =========================================================================
+    public Action HeadbuttJumpHandler;
+    public Action HeadbuttStayAscendingHandler;
+
+    public Action OnEnterJumpHandler;
+
+
+    /// <summary>
+    /// States of the machine, keyed with their respective StateEnum.
+    /// </summary>
+    /// <returns></returns>
     public Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> States { get; protected set; } = new()
     {
         { StateEnum.IdleState, new IdleState() },
         { StateEnum.MovingState, new MovingState() },
-        { StateEnum.BasicAttackState, new BasicAttackState() }
+        { StateEnum.BasicAttackState, new BasicAttackState() },
+        { StateEnum.HeadbuttAttackAscendingState, new HeadbuttAttackAscendingState() },
+        { StateEnum.HeadbuttAttackDescendingState, new HeadbuttAttackDescendingState() },
+        { StateEnum.JumpAscendingState, new JumpAscendingState() },
+        { StateEnum.JumpDescendingState, new JumpDescendingState() }
     };
 
     /// 
     private void Start()
     {
         // Initialize the state machine with the Idle state
-        TransitionToState(StateEnum.IdleState);
+        TransitionToState(_initialState);
+        Rigidbody = GetComponent<Rigidbody>();
 
     }
     private void Update()
