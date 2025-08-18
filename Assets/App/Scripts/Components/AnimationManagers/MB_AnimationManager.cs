@@ -4,10 +4,8 @@ public class MB_AnimationManager : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-
     [SerializeField] private MB_PlayerStateContext _playerStateContext;
-
-    private Vector3 lastDir = Vector3.down;
+    [SerializeField] private MB_Facing _facing;
 
     void OnEnable()
     {
@@ -22,18 +20,13 @@ public class MB_AnimationManager : MonoBehaviour
 
     public void SetDirection(Vector3 dir)
     {
-        if (dir != Vector3.zero)
-        {
-            lastDir = dir;
+        var (side, forward, backward) = _facing.SetDirection(dir);
 
-            bool facingSide = Mathf.Abs(dir.x) > Mathf.Abs(dir.z);
-            _animator.SetBool("faceSide", facingSide);
-            _animator.SetBool("faceForward", dir.z > 0 && !facingSide);
-            _animator.SetBool("faceBackward", dir.z < 0 && !facingSide);
-
-            if (facingSide)
-                _spriteRenderer.flipX = (dir.x < 0);
-        }
+        if (side)
+                _spriteRenderer.flipX = (_facing.LastDir.x < 0);
+        _animator.SetBool("faceSide", side);
+        _animator.SetBool("faceForward", forward);
+        _animator.SetBool("faceBackward", backward);
     }
 
     public void SetAimDirection(Vector3 aimWorldPos)
