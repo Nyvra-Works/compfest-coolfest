@@ -10,6 +10,7 @@ public class MB_PlayerWalk : MB_CharacterWalk
     //     _rigidbody = rigidbody;
     //     _walkSpeed = walkSpeed;
     // }
+    private Vector3 _velocity;
     private Vector3 direction;
     public void Start()
     {
@@ -23,7 +24,7 @@ public class MB_PlayerWalk : MB_CharacterWalk
     }
     private void FixedUpdate()
     {
-        Vector3 velocity = new(direction.normalized.x * _walkSpeed, _rigidbody.linearVelocity.y, direction.normalized.z * _walkSpeed);
-        _rigidbody.linearVelocity = velocity;
+        _velocity = new(direction.normalized.x * _walkSpeed * Time.fixedDeltaTime, _rigidbody.linearVelocity.y, direction.normalized.z * _walkSpeed * Time.fixedDeltaTime);
+        _rigidbody.linearVelocity = _velocity;
     }
 }

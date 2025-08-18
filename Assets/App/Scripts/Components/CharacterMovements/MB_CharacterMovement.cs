@@ -1,3 +1,4 @@
+using StateMachines.Enemy.States;
 using UnityEngine;
 
 public class MB_CharacterMovement : MonoBehaviour
@@ -10,13 +11,13 @@ public class MB_CharacterMovement : MonoBehaviour
     public float WalkSpeed => _walkSpeed;
 
     [Header("I Walk (assign one)")]
-    [SerializeField] protected MB_CharacterWalk _walkable;
+    [SerializeField] protected MB_CharacterWalk _locomotory;
     // [SerializeField] private PlayerWalk playerWalk;
     // [SerializeField] private AINavMeshWalk aINavMeshWalk;   
 
 
     [Header("I Character Control (assign one)")]
-    [SerializeField] protected MB_CharacterControl _characterControl;
+    [SerializeField] protected MB_CharacterMovementControl _characterControl;
     // [SerializeField] private MB_PlayerControl playerControl;
     // [SerializeField] private MB_AIControl aIControl;
 
@@ -27,11 +28,10 @@ public class MB_CharacterMovement : MonoBehaviour
      */
 
 
-    public bool OverrideStopWalk { get; set; } = false;
     private void Awake()
     {
         // _walkable = playerWalk != null ? playerWalk : aINavMeshWalk;
-        if (_walkable == null)
+        if (_locomotory == null)
         {
             Debug.LogError($"{this.name} Walkable is not assigned. Please assign either PlayerWalk or AINavMeshWalk.");
             return;
@@ -43,16 +43,14 @@ public class MB_CharacterMovement : MonoBehaviour
             Debug.LogError($"{this.name} Character control is not assigned. Please assign either MB_PlayerControl or MB_AIControl.");
         }
     }
-    void Update()
+    // public virtual void FixedUpdate()
+    // {
+    //     _walkable.SetPosition(_characterControl.TargetDirection);
+    //     // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+    // }
+    public void FullStop()
     {
-        if (!OverrideStopWalk)
-        {
-            _walkable.SetPosition(_characterControl.TargetDirection);
-        }
-        else
-        {
-            _walkable.SetPosition(Vector3.zero);
-        }
-        // Debug.Log($"Target Direction: {_characterControl.TargetDirection}");
+        _locomotory.SetPosition(Vector3.zero);
     }
+
 }

@@ -1,9 +1,9 @@
 using System;
-using UnityEditor.IMGUI.Controls;
+// using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MB_PlayerControl : MB_CharacterControl
+public class MB_PlayerControl : MB_CharacterMovementControl
 {
     /*
     * serialize fields (injection)

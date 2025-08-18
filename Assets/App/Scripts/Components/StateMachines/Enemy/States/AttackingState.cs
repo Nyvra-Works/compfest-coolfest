@@ -1,18 +1,25 @@
+using System;
 using UnityEngine;
 
 namespace StateMachines.Enemy.States
 {
     public class AttackingState : BaseState
     {
-        public override void Enter(EnemyStateContext context)
+        MB_EnemyStateContext _context;
+        public override void Enter(MB_EnemyStateContext context)
         {
             Debug.Log("Entering Attacking State");
-
-            context.CharacterMovement.OverrideStopWalk = true;
+            context.Movement.FullStop();
+            _context = context;
+            MB_SceneBoundHealthController.OnDamageTakenHandler += OnTakenDamage;
         }
-
-        public override void UpdateExecute(EnemyStateContext context)
+        void OnTakenDamage()
         {
+            _context.TransitionToState(_context.SoaringState);
+        }
+        public override void UpdateExecute(MB_EnemyStateContext context)
+        {
+
             if (context.TargetsFinderByLayer.Targets.Count == 0)
             {
                 context.TransitionToState(context.IdleState);
@@ -23,10 +30,12 @@ namespace StateMachines.Enemy.States
             }
         }
 
-        public override void Exit(EnemyStateContext context)
+
+        public override void Exit(MB_EnemyStateContext context)
         {
             // Logic for exiting the attacking state
-            context.CharacterMovement.OverrideStopWalk = false;
+            
+            MB_SceneBoundHealthController.OnDamageTakenHandler -= OnTakenDamage;
         }
     }
 }
