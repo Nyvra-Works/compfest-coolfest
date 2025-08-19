@@ -20,7 +20,7 @@ public class MB_CollisionTargetFinderByLayer : MB_TargetFinder
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log($"OnCollisionEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        // Debug.Log($"OnCollisionEnter: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (IsInTargetLayer(other.gameObject.layer) && !_targets.Contains(other.transform))
         {
             _targets.Add(other.transform);
@@ -30,7 +30,7 @@ public class MB_CollisionTargetFinderByLayer : MB_TargetFinder
 
     private void OnCollisionExit(Collision other)
     {
-        Debug.Log($"OnCollisionExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
+        // Debug.Log($"OnCollisionExit: {other.gameObject.name} in layer {LayerMask.LayerToName(other.gameObject.layer)}");
         if (_targets.Contains(other.transform))
         {
             _targets.Remove(other.transform);

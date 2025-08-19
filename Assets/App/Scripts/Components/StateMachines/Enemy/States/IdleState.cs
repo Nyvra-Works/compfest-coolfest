@@ -6,7 +6,7 @@ namespace StateMachines.Enemy.States
     {
         public override void Enter(MB_EnemyStateContext context)
         {
-            Debug.Log("Entering Idle State");
+            // Debug.Log("Entering Idle State");
         }
 
         public override void UpdateExecute(MB_EnemyStateContext context)

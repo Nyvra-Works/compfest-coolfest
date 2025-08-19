@@ -66,6 +66,10 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
         // Initialize the state machine with the Idle state
         TransitionToState(_initialState);
         Rigidbody = GetComponent<Rigidbody>();
+        if (headButtTargetFinder == null)
+        {
+            Debug.LogError("HeadButtTargetFinder is not assigned. Please assign a HeadButtTargetFinder component.");
+        }
 
     }
     private void Update()

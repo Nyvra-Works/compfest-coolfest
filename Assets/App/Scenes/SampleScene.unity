@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!64 &239687462
 MeshCollider:
   m_ObjectHideFlags: 0
