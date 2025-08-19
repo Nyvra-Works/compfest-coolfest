@@ -3,7 +3,7 @@ public class MB_TeleliftableItem : MonoBehaviour
 {
     [SerializeField] Rigidbody _rigidbody;
     [SerializeField] Collider _collider;
-    [SerializeField] Throw _throwStrategy;
+    [SerializeField] SO_Throw _throwStrategy;
     [SerializeField] [Tooltip("To apply damage or other effects")] LayerMask _layerOfTarget;
     [SerializeField] SO_ThrownObjectAttack _thrownObjectAttack;
     public void UpdatePosition(Vector3 position)
@@ -22,8 +22,8 @@ public class MB_TeleliftableItem : MonoBehaviour
     {
         _rigidbody.isKinematic = false;
         _collider.isTrigger = false;
-        var direction = (targetPosition - transform.position).normalized;
-        _throwStrategy.Execute(direction, _rigidbody);
+        // var direction = (targetPosition - transform.position).normalized;
+        _throwStrategy.Execute(targetPosition, transform.position, _rigidbody);
     }
 
     void OnCollisionEnter(Collision collision)

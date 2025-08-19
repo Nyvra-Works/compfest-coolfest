@@ -14,11 +14,20 @@ public class SO_AimMarker : ScriptableObject
             _marker = Instantiate(_markerPrefab, aimWorldPos, Quaternion.identity);
 
         }
-        if (_lastPos == aimWorldPos || aimWorldPos == null) 
+        if (_lastPos == aimWorldPos) 
         {
             return;
         }
-        
+        if (aimWorldPos == Vector3.zero || aimWorldPos == null)
+        {
+            _marker.enabled = false;
+            return;
+        }
+
+        if (!_marker.enabled)
+        {
+            _marker.enabled = true;
+        }
 
         _marker.transform.position = aimWorldPos;
         _lastPos = aimWorldPos;

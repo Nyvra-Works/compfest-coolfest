@@ -86,6 +86,10 @@ public class SO_ThrowAim : ScriptableObject
             Vector3 toTarget = target.transform.position - position;
             float distance = toTarget.magnitude;
 
+            // Angle calculation ignores Y axis
+            toTarget.y = 0;
+            playerFacing.y = 0;
+            
             // Hitung sudut antara arah player facing dan arah ke target
             float angle = Vector3.Angle(playerFacing, toTarget.normalized);
 

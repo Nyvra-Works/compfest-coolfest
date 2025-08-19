@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3b5ebd4ed4b004f8f4813f923c179d, type: 3}
-  m_Name: Nira
+  m_Script: {fileID: 11500000, guid: 0e63203d907854049a1676eddacafac7, type: 3}
+  m_Name: SO_SmartThrow
   m_EditorClassIdentifier: 
-  _maximumFinderRadius: 10
-  _targetMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _maxTargets: 10
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  _distanceWeight: 0.2
-  _angleWeight: 0.8
+  _arcAngle: 70
