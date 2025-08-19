@@ -52,6 +52,10 @@ MonoBehaviour:
   _collider: {fileID: 4444186457590430447}
   _throwStrategy:
     _force: 30
+  _layerOfTarget:
+    serializedVersion: 2
+    m_Bits: 64
+  _thrownObjectAttack: {fileID: 11400000, guid: 945ec405657d85a48b32814615217ccb, type: 2}
 --- !u!33 &976430413442258788
 MeshFilter:
   m_ObjectHideFlags: 0
