@@ -6,7 +6,7 @@ public class MB_CombatInput : MonoBehaviour
 {
     // public Action BasicAttackEvent { get; set; }
     // public Action SpecialAttack1Event { get; set; }
-    // public Action SpecialAttack2Event { get; set; }
+    public Action SpecialAttack2Event { get; set; }
     public bool IsBasicAttacking { get; set; }
     public bool IsSpecial1Attacking { get; set; }
     public bool IsSpecial2Attacking { get; set; }
@@ -29,7 +29,7 @@ public class MB_CombatInput : MonoBehaviour
         else IsSpecial1Attacking = false;
         if (Input.GetButtonDown("Fire3"))
         {
-            // SpecialAttack2Event?.Invoke();
+            SpecialAttack2Event?.Invoke();
             // Debug.Log("Special Attack 2");
             IsSpecial2Attacking = true;
         }

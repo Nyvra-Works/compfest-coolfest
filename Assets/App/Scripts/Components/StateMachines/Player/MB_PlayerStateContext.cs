@@ -41,6 +41,8 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     public Action HeadbuttStayAscendingHandler;
 
     public Action OnEnterJumpHandler;
+    public Action<bool> IsMovingHandler;
+    public Action<Vector3> SetAnimationDirectionHandler;
 
 
     /// <summary>
