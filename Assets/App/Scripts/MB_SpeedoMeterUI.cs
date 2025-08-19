@@ -1,3 +1,4 @@
+using System.Numerics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +20,7 @@ public class MB_SpeedoMeterUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayText.text = "Speed: " + subject.linearVelocity.magnitude.ToString("F2") + " m/s";
+        displayText.text = "Speed: " + (subject.linearVelocity - new UnityEngine.Vector3(0, subject.linearVelocity.y, 0)) .magnitude.ToString("F2") + " m/s";
     }
     
 }

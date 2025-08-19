@@ -25,7 +25,7 @@ namespace StateMachines.Player.States
             _playerMovement.UpdateInState();
 
             _time += Time.deltaTime;
-            if (_time < 1)
+            if (_time < 0.1)
             {
                 return;
             }

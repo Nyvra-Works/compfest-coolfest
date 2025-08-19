@@ -53,7 +53,7 @@ MonoBehaviour:
   _throwStrategy: {fileID: 11400000, guid: c348607f6b7cd0c44a3cf77a1cf20758, type: 2}
   _layerOfTarget:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _thrownObjectAttack: {fileID: 11400000, guid: 945ec405657d85a48b32814615217ccb, type: 2}
 --- !u!33 &976430413442258788
 MeshFilter:

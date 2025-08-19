@@ -15,7 +15,7 @@ MonoBehaviour:
   _maximumFinderRadius: Infinity
   _targetMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _maxTargets: 10
   _obstacleMask:
     serializedVersion: 2
