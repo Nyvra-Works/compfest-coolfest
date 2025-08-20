@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
-public class MB_TeleliftableItem : MonoBehaviour
+public class MB_TeleliftableItem : MonoBehaviour, IPoolable<MB_TeleliftableItem>
 {
     [SerializeField] Rigidbody _rigidbody;
     [SerializeField] Collider _collider;
     [SerializeField] SO_Throw _throwStrategy;
-    [SerializeField] [Tooltip("To apply damage or other effects")] LayerMask _layerOfTarget;
+    [SerializeField][Tooltip("To apply damage or other effects")] LayerMask _layerOfTarget;
     [SerializeField] SO_ThrownObjectAttack _thrownObjectAttack;
+    [SerializeField] bool _destroyOnTargetImpact = true;
+    // [SerializeField] bool _hasExpiration = true;
+    // [SerializeField] float _expirationTime = 5f;
     public void UpdatePosition(Vector3 position)
     {
         if (!_rigidbody.isKinematic && !_collider.isTrigger)
@@ -31,7 +35,35 @@ public class MB_TeleliftableItem : MonoBehaviour
         if ((1 << collision.gameObject.layer & _layerOfTarget) != 0)
         {
             _thrownObjectAttack.DealDamage(new Transform[] { collision.transform }, transform);
+            if (_destroyOnTargetImpact)
+            {
+                OnExpired?.Invoke(this);
+            }
         }
     }
 
+    // poolable interface implementation
+    public Action<MB_TeleliftableItem> OnExpired;
+
+    public void SetReleaseCallback(Action<MB_TeleliftableItem> releaseAction)
+    {
+        OnExpired = releaseAction;
+    }
+    
+    float _countdown;
+    // void OnEnable()
+    // {
+    //     _countdown = _hasExpiration ? _expirationTime : 0f;
+    // }
+    void Update()
+    {
+        // if (_hasExpiration)
+        // {
+        //     _countdown -= Time.deltaTime;
+        //     if (_countdown <= 0f)
+        //     {
+        //         OnExpired?.Invoke(this);
+        //     }
+        // }
+    }
 }

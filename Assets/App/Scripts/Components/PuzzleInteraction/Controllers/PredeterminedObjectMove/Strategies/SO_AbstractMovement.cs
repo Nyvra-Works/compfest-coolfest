@@ -4,5 +4,5 @@ using UnityEngine;
 public abstract class SO_AbstractMovement : ScriptableObject
 {
     protected bool IsKinematic = true;
-    public abstract void UpdatePosition(Vector3 position, Rigidbody rb);
+    public abstract void UpdatePosition(Vector3 position, Transform transform);
 }
