@@ -9,6 +9,7 @@ public class MB_Facing : MonoBehaviour
 
 
 
+
     public (bool faceSide, bool faceForward, bool faceBackward) SetDirection(Vector3 dir)
     {
         if (dir != Vector3.zero)

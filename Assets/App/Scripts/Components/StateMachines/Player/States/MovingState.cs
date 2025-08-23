@@ -11,22 +11,24 @@ namespace StateMachines.Player.States
 
             _playerMovement = (MB_PlayerMovement)context.CharacterMovement;
 
-            context.IsMovingHandler?.Invoke(true);
+
+            lastDir = Vector3.zero;
+
         }
 
         public override void Exit(MB_PlayerStateContext context)
         {
-            context.IsMovingHandler?.Invoke(false);
         }
 
+        Vector3 lastDir ;
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
             // allow player to move
             _playerMovement.UpdateInState();
-
-
             // send direction for animation handling
-            context.SetAnimationDirectionHandler?.Invoke(context.CharacterMovementControl.TargetDirection);
+            // context.SetAnimationDirectionHandler?.Invoke(context.CharacterMovementControl.TargetDirection);
+            context.OnUpdateStateHandler?.Invoke(StateEnum.MovingState);
+
 
             if (context.CharacterMovementControl.TargetDirection == Vector3.zero)
             {

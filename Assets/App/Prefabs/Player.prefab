@@ -129,7 +129,6 @@ GameObject:
   - component: {fileID: 5401953834743613873}
   - component: {fileID: 9030341372111573905}
   - component: {fileID: 7204596026698579557}
-  - component: {fileID: 5011648564782601514}
   - component: {fileID: 2873031663576899995}
   - component: {fileID: 3281517914675866940}
   m_Layer: 3
@@ -438,22 +437,6 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 0}
   _stateContext: {fileID: 7225390949487596490}
---- !u!114 &5011648564782601514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958014822049687421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d22385e3b51db149b735750da6d4b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 2015603666890304390}
-  _spriteRenderer: {fileID: 387847690480302473}
-  _playerStateContext: {fileID: 7225390949487596490}
-  _facing: {fileID: 2873031663576899995}
 --- !u!114 &2873031663576899995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +476,7 @@ GameObject:
   - component: {fileID: 2651135265520348097}
   - component: {fileID: 387847690480302473}
   - component: {fileID: 2015603666890304390}
+  - component: {fileID: 5676531954370819075}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -592,6 +576,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5676531954370819075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143761804866782856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d22385e3b51db149b735750da6d4b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2015603666890304390}
+  _spriteRenderer: {fileID: 387847690480302473}
+  _playerStateContext: {fileID: 7225390949487596490}
+  _facing: {fileID: 2873031663576899995}
 --- !u!1001 &6366777010398585924
 PrefabInstance:
   m_ObjectHideFlags: 0

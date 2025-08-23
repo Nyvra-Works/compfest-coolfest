@@ -8,11 +8,12 @@ namespace StateMachines.Player.States
     {
         public override void Enter(MB_PlayerStateContext context)
         {
-            // Debug.Log("Entering Idle State");
+            context.OnUpdateStateHandler?.Invoke(StateEnum.IdleState);
         }
 
         public override void Exit(MB_PlayerStateContext context)
         {
+            context.OnExitStateHandler?.Invoke(StateEnum.IdleState);
         }
 
         public override void UpdateExecute(MB_PlayerStateContext context)
