@@ -4,11 +4,13 @@ using UnityEngine;
 public class SO_AimMarker : ScriptableObject
 {
     [SerializeField] SpriteRenderer _markerPrefab;
+    [SerializeField] Vector3 _offset;
 
     private Vector3 _lastPos;
     private SpriteRenderer _marker;
     public void RenderMarker(Vector3 aimWorldPos)
     {
+        aimWorldPos += _offset;
         if (_marker == null)
         {
             _marker = Instantiate(_markerPrefab, aimWorldPos, Quaternion.identity);

@@ -46,10 +46,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _liftingPosition: {x: -1, y: 1.6, z: 0}
   _teleliftableDetector: {fileID: 3862511606638262694}
-  _combatInput: {fileID: 0}
+  _combatInput: {fileID: 4846358323815636059}
   _facing: {fileID: 2873031663576899995}
   _throwAim: {fileID: 11400000, guid: 50c30ca7d277bc143bc8e2b69be07980, type: 2}
   _aimMarker: {fileID: 11400000, guid: 8f7f0f5c561deea4687c5144cee15851, type: 2}
+--- !u!1 &3029911845126043774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3712409291858675547}
+  - component: {fileID: 2818004447577944840}
+  - component: {fileID: 4846358323815636059}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3712409291858675547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3029911845126043774}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.018469, y: -3.9999695, z: 2.5048838}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7774922767753698664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2818004447577944840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3029911845126043774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91f79b5dda8fa842b79169bc508c774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4846358323815636059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3029911845126043774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310a6cfe485f4c6489411122425ad972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5958014822049687421
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +156,7 @@ Transform:
   - {fileID: 7273341544156707354}
   - {fileID: 1490227515917523635}
   - {fileID: 3834433559455438111}
+  - {fileID: 3712409291858675547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5367270232490568363
@@ -230,8 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialState: 0
   characterMovement: {fileID: 5569008744488766153}
-  characterMovementControl: {fileID: 0}
-  combatInput: {fileID: 0}
+  characterMovementControl: {fileID: 2818004447577944840}
+  combatInput: {fileID: 4846358323815636059}
   combatController: {fileID: 7447232273571996905}
   basicAttackSpeed:
     UseConstant: 1
@@ -306,7 +364,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8106608121568855223}
   _walkSpeed: 500
   _locomotory: {fileID: 798506269074776173}
-  _characterControl: {fileID: 0}
+  _characterControl: {fileID: 2818004447577944840}
 --- !u!114 &6210451728417218801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,10 +478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf6784e642e0d458ff6bf361d8dad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 8106608121568855223}
   _walkSpeed: 500
-  _locomotory: {fileID: 0}
-  _characterControl: {fileID: 0}
+  _locomotory: {fileID: 798506269074776173}
+  _characterControl: {fileID: 2818004447577944840}
 --- !u!1 &6143761804866782856
 GameObject:
   m_ObjectHideFlags: 0

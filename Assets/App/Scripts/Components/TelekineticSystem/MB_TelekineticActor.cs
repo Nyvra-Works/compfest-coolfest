@@ -56,9 +56,13 @@ public class MB_TelekineticActor : MonoBehaviour
     void Update()
     {
         var target = _throwAim.GetBestTarget(_facing.LastDir, transform.position);
-        if (target != null)
+        if (target != null && _teleliftableItem != null)
         {
             _aimMarker.RenderMarker(target != null ? target.transform.position : Vector3.zero);
+        }
+        else
+        {
+            _aimMarker.RenderMarker(Vector3.zero);
         }
     }
     void FixedUpdate()

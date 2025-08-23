@@ -24,6 +24,7 @@ namespace StateMachines.Player.States
             // allow player to move
             _playerMovement.UpdateInState();
 
+
             // send direction for animation handling
             context.SetAnimationDirectionHandler?.Invoke(context.CharacterMovementControl.TargetDirection);
 
