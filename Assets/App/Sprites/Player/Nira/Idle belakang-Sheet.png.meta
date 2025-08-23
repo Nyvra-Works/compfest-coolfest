@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b581ca22f7101684bbc0c70b92f7bdd9
+guid: 0272a7cc0d8c2d17ebfefc40f78f060a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,111 +97,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stomp-Sheet_0
+      name: Idle belakang-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 48
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 197bd0f6aee32f7ed82b3883318f2140
-      internalID: -1135341795
+      spriteID: aa7e7b725f5e2cf938bb8362071d88ee
+      internalID: -505331144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stomp-Sheet_1
+      name: Idle belakang-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 0
-        width: 64
-        height: 48
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3671a60f6d12d072a8d6e55d2067a6c
-      internalID: -1526266085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stomp-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 48
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 846eabbc533a36b23bf41284258ea75b
-      internalID: -1378484464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stomp-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 48
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 310dee9a014b2af908a2abdddd170efb
-      internalID: 2011177122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stomp-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 48
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a704150645a79dae5a5ad36e6ee4fea5
-      internalID: -946746007
+      spriteID: cb1fa9677df5ffef8a30cfd16325755b
+      internalID: 1613091069
       vertices: []
       indices: 
       edges: []
@@ -210,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8dd72a418bdc0c4e0bbc4bc705ae8a80
+    spriteID: 228b6ff5efacf79bebe2976e77b44a3a
     internalID: 0
     vertices: []
     indices: 
@@ -220,11 +154,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stomp-Sheet_0: -1135341795
-      Stomp-Sheet_1: -1526266085
-      Stomp-Sheet_2: -1378484464
-      Stomp-Sheet_3: 2011177122
-      Stomp-Sheet_4: -946746007
+      Idle belakang-Sheet_0: -505331144
+      Idle belakang-Sheet_1: 1613091069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
