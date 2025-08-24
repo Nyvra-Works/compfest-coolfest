@@ -36,6 +36,7 @@ namespace PuzzleInteraction.InteractionReceiver
         float time = 0;
         public void ReceiveCombatEvent(CombatEventType combatEventType)
         {
+            Debug.Log($"ReceiveCombatEvent {combatEventType} | isActive {isActive}");
             time -= Time.deltaTime;
 
             if (time > 0)
