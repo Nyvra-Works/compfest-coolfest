@@ -1,16 +1,20 @@
 using System;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PuzzleInteraction.InteractionReceiver
 {
 
-    public class MB_WorldButton : MB_AbstractInteractionReceiver, ICombatReceiver
+    public class MB_WorldButton : MonoBehaviour, ICombatReceiver
     {
         [SerializeField] bool isActive = false;
         [SerializeField] ReceiverMode receiverMode = ReceiverMode.Toggle;
         [SerializeField] float _toggleCooldownDuration = 0.5f;
         [SerializeField] CombatEventType _acceptedCombatEventType = CombatEventType.BasicAttack;
+        public UnityEvent OnActiveChanged;
+        private UnityEvent OnIsActiveTrue;
+        private UnityEvent OnIsActiveFalse;
         public CombatEventType CombatEventType => _acceptedCombatEventType;
         public bool IsActive
         {

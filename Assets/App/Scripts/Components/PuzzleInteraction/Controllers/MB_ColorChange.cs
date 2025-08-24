@@ -12,16 +12,7 @@ namespace PuzzleInteraction.Controllers
             _realColor = _renderer.material.color;
         }
 
-        protected override void OnDisable()
-        {
-            this._interactionReceiver.OnIsActiveTrue -= TransitionToColor;
-        }
-
-        protected override void OnEnable()
-        {
-            this._interactionReceiver.OnIsActiveTrue += TransitionToColor;
-        }
-        void TransitionToColor()
+        public void TransitionToColor()
         {
             _renderer.material.color = _transitionToColor;
         }

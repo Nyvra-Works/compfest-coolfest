@@ -15,12 +15,12 @@ public class SequencePuzzleManager : MB_AbstractPuzzleBase
         throw new System.NotImplementedException();
     }
 
-    protected override void OnDisable()
+    protected void OnDisable()
     {
         throw new System.NotImplementedException();
     }
 
-    protected override void OnEnable()
+    protected void OnEnable()
     {
         throw new System.NotImplementedException();
     }

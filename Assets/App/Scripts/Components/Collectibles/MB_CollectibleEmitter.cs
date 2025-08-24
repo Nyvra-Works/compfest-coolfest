@@ -10,15 +10,6 @@ public class MB_CollectibleEmitter : MonoBehaviour {
 
     [SerializeField] MB_WorldButton _button;
 
-    void OnEnable()
-    {
-        _button.OnIsActiveTrue += EmitCollectible;
-    }
-
-    void OnDisable()
-    {
-        _button.OnIsActiveTrue -= EmitCollectible;
-    }
 
     public void EmitCollectible()
     {

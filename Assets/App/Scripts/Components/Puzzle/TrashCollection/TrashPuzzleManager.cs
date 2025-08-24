@@ -15,7 +15,7 @@ namespace App.Scripts.Components.Puzzle
         private List<MB_TrashObject> _collectedTrash;
 
         #region Method Overrides
-        protected override void OnEnable()
+        protected void OnEnable()
         {
             foreach (var trash in _trashContainer)
             {
@@ -24,7 +24,7 @@ namespace App.Scripts.Components.Puzzle
             }
         }
 
-        protected override void OnDisable()
+        protected void OnDisable()
         {
             foreach (var trash in _trashContainer)
             {
