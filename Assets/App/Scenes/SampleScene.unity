@@ -664,6 +664,7 @@ MonoBehaviour:
   - {fileID: 243155527}
   - {fileID: 1733747791}
   _movementStrategy: {fileID: 11400000, guid: 8330330c746b6434eaa47a2829951e4a, type: 2}
+  startPaused: 1
 --- !u!114 &442728980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,9 +993,9 @@ GameObject:
   - component: {fileID: 621519426}
   - component: {fileID: 621519425}
   - component: {fileID: 621519424}
-  - component: {fileID: 621519423}
   - component: {fileID: 621519422}
   - component: {fileID: 621519428}
+  - component: {fileID: 621519429}
   m_Layer: 11
   m_Name: Button
   m_TagString: Untagged
@@ -1014,25 +1015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c93f5a4d1aed4ba21c007663a862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionReceiver: {fileID: 621519423}
   _renderer: {fileID: 621519425}
   _transitionToColor: {r: 0, g: 1, b: 0.045463085, a: 0}
---- !u!114 &621519423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621519421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347ada8d06b673f449b69aac2dd6c64a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 0
-  receiverMode: 2
-  _toggleCooldownDuration: 0.2
-  _acceptedCombatEventType: 1
 --- !u!65 &621519424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1136,7 +1120,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collectiblePool: {fileID: 1806087890}
   _number: 5
-  _button: {fileID: 621519423}
+  _button: {fileID: 0}
+--- !u!114 &621519429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621519421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347ada8d06b673f449b69aac2dd6c64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  receiverMode: 1
+  _toggleCooldownDuration: 0.5
+  _acceptedCombatEventType: 1
+  OnActiveChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 621519422}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_ColorChange, Assembly-CSharp
+        m_MethodName: TransitionToColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 621519428}
+        m_TargetAssemblyTypeName: MB_CollectibleEmitter, Assembly-CSharp
+        m_MethodName: EmitCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442728979}
+        m_TargetAssemblyTypeName: MB_ObjectMovement, Assembly-CSharp
+        m_MethodName: StartMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &746089775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collectiblePool: {fileID: 1806087890}
   _number: 5
-  _button: {fileID: 1237158912}
+  _button: {fileID: 0}
 --- !u!114 &1237158911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,7 +2125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c93f5a4d1aed4ba21c007663a862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionReceiver: {fileID: 1237158912}
   _renderer: {fileID: 1237158914}
   _transitionToColor: {r: 0, g: 1, b: 0.045463085, a: 0}
 --- !u!114 &1237158912
@@ -2105,6 +2143,33 @@ MonoBehaviour:
   receiverMode: 2
   _toggleCooldownDuration: 0.2
   _acceptedCombatEventType: 4
+  OnActiveChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1237158911}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_ColorChange, Assembly-CSharp
+        m_MethodName: TransitionToColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237158910}
+        m_TargetAssemblyTypeName: MB_CollectibleEmitter, Assembly-CSharp
+        m_MethodName: EmitCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1237158913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3247,6 +3312,33 @@ MonoBehaviour:
   receiverMode: 2
   _toggleCooldownDuration: 0.2
   _acceptedCombatEventType: 2
+  OnActiveChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952135332}
+        m_TargetAssemblyTypeName: MB_CollectibleEmitter, Assembly-CSharp
+        m_MethodName: EmitCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1952135331}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_ColorChange, Assembly-CSharp
+        m_MethodName: TransitionToColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1952135331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3259,7 +3351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c93f5a4d1aed4ba21c007663a862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionReceiver: {fileID: 1952135330}
   _renderer: {fileID: 1952135325}
   _transitionToColor: {r: 0, g: 1, b: 0.045463085, a: 0}
 --- !u!114 &1952135332
@@ -3276,7 +3367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collectiblePool: {fileID: 1806087890}
   _number: 9
-  _button: {fileID: 1952135330}
+  _button: {fileID: 0}
 --- !u!1 &2023849573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collectiblePool: {fileID: 1806087890}
   _number: 5
-  _button: {fileID: 2023849576}
+  _button: {fileID: 0}
 --- !u!114 &2023849575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3326,7 +3417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c93f5a4d1aed4ba21c007663a862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionReceiver: {fileID: 2023849576}
   _renderer: {fileID: 2023849578}
   _transitionToColor: {r: 0, g: 1, b: 0.045463085, a: 0}
 --- !u!114 &2023849576
@@ -3345,6 +3435,33 @@ MonoBehaviour:
   receiverMode: 2
   _toggleCooldownDuration: 0.2
   _acceptedCombatEventType: 4
+  OnActiveChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2023849575}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_ColorChange, Assembly-CSharp
+        m_MethodName: TransitionToColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2023849574}
+        m_TargetAssemblyTypeName: MB_CollectibleEmitter, Assembly-CSharp
+        m_MethodName: EmitCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &2023849577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3576,7 +3693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f1cff269b4d224d92d7953bd7a7c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionReceiver: {fileID: 1952135330}
 --- !u!136 &2130699930
 CapsuleCollider:
   m_ObjectHideFlags: 0
