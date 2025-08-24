@@ -8,7 +8,6 @@ public class MB_CollectibleEmitter : MonoBehaviour {
     [SerializeField] MB_CollectiblePool _collectiblePool;
     [SerializeField] int _number;
 
-    [SerializeField] MB_WorldButton _button;
 
 
     public void EmitCollectible()

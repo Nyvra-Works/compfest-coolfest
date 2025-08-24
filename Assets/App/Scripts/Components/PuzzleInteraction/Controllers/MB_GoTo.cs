@@ -15,7 +15,7 @@ namespace PuzzleInteraction.Controllers
 
         public void Transition()
         {
-            _objectToChange.position += _move;
+            _objectToChange.localPosition += _move;
         }
     }
 }

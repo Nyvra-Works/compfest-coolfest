@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 9030341372111573905}
   - component: {fileID: 7204596026698579557}
   - component: {fileID: 2873031663576899995}
-  - component: {fileID: 3281517914675866940}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -399,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8106608121568855223}
-  _walkSpeed: 500
+  _walkSpeed: 100
   _locomotory: {fileID: 798506269074776173}
   _characterControl: {fileID: 2818004447577944840}
 --- !u!114 &6210451728417218801
@@ -487,22 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9c15098b50d7347a8fc19d9dc47602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3281517914675866940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958014822049687421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bf6784e642e0d458ff6bf361d8dad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 8106608121568855223}
-  _walkSpeed: 500
-  _locomotory: {fileID: 798506269074776173}
-  _characterControl: {fileID: 2818004447577944840}
 --- !u!1 &6143761804866782856
 GameObject:
   m_ObjectHideFlags: 0

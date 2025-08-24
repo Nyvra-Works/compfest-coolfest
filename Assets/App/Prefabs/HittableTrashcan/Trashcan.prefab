@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4774212371199294186}
   - component: {fileID: 6506799296756261943}
   - component: {fileID: 5871638544995897475}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trashcan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.7915049, y: 0.46258715, z: -4.0190277}
-  m_LocalScale: {x: 1.04, y: 1.04, z: 1.04}
+  m_LocalScale: {x: 0.32, y: 0.32, z: 0.32}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6407667884771634747}
@@ -160,6 +160,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6189419431916519584}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_DestroyWithTime,
+          Assembly-CSharp
+        m_MethodName: StartCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1267145818224631973}
+        m_TargetAssemblyTypeName: MB_CollectibleEmitter, Assembly-CSharp
+        m_MethodName: EmitCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 875385911073127598}
+        m_TargetAssemblyTypeName: PuzzleInteraction.Controllers.MB_DestroyWithTime,
+          Assembly-CSharp
+        m_MethodName: StartCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &5871638544995897475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -192,7 +230,10 @@ GameObject:
   - component: {fileID: 6407667884771634747}
   - component: {fileID: 4649937710889469388}
   - component: {fileID: 2922711858270156495}
-  m_Layer: 0
+  - component: {fileID: 6189419431916519584}
+  - component: {fileID: 1267145818224631973}
+  - component: {fileID: 875385911073127598}
+  m_Layer: 11
   m_Name: Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4774212371199294186}
-  force: 10
+  force: 3
   directionWeight: {x: 1, y: 3, z: 1}
 --- !u!114 &2922711858270156495
 MonoBehaviour:
@@ -242,4 +283,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3294583897132929194}
-  _transitionToColor: {r: 1, g: 0, b: 0, a: 0.36862746}
+  _transitionToColor: {r: 0.4566037, g: 0.30583832, b: 0.30583832, a: 1}
+--- !u!114 &6189419431916519584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504382516705088360}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851aae1749db25641a0e8e94ed637e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeSeconds: 8
+  _objectToDestroy: {fileID: 4877212469708135220}
+--- !u!114 &1267145818224631973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504382516705088360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c00237c3c8cab042b0a197ba3ceb786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectiblePool: {fileID: 0}
+  _number: 5
+--- !u!114 &875385911073127598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504382516705088360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ef5d53fd3ad194dae6fedfb669f227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeSeconds: 1
+  _objectToDestroy: {fileID: 4877212469708135220}
