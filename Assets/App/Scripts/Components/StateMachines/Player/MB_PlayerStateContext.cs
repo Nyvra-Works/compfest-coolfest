@@ -42,8 +42,12 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
 
     public Action OnEnterJumpHandler;
 
+    public Action OnEnterStompAttackHandler;
+    public Action OnExitStompAttackHandler;
+
     public Action<Vector3> SetAnimationDirectionHandler;
 
+    public Action<StateEnum> OnEnterStateHandler;
     public Action<StateEnum> OnUpdateStateHandler;
     public Action<StateEnum> OnExitStateHandler;
 
@@ -60,7 +64,8 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
         { StateEnum.HeadbuttAttackAscendingState, new HeadbuttAttackAscendingState() },
         { StateEnum.HeadbuttAttackDescendingState, new HeadbuttAttackDescendingState() },
         { StateEnum.JumpAscendingState, new JumpAscendingState() },
-        { StateEnum.JumpDescendingState, new JumpDescendingState() }
+        { StateEnum.JumpDescendingState, new JumpDescendingState() },
+        {StateEnum.StompAttackState, new StompAttackState() }
     };
 
     /// 

@@ -1393,10 +1393,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5069808178607559094, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
+      propertyPath: m_Name
+      value: StompMovement
+      objectReference: {fileID: 0}
     - target: {fileID: 5958014822049687421, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7447232273571996905, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
+      propertyPath: _stompAttack
+      value: 
+      objectReference: {fileID: 11400000, guid: fd7ceafc94b34ac478a46c24b96a728c, type: 2}
     - target: {fileID: 7774922767753698664, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.018469
@@ -1436,6 +1444,10 @@ PrefabInstance:
     - target: {fileID: 7774922767753698664, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106608121568855223, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9030341372111573905, guid: 821c8a050be3ddb1ba33bf9f877af925, type: 3}
       propertyPath: _currentStateText

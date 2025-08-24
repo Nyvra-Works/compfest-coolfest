@@ -9,6 +9,7 @@ namespace StateMachines.Player.States
         HeadbuttAttackAscendingState = 3,
         HeadbuttAttackDescendingState = 4,
         JumpAscendingState = 5,
-        JumpDescendingState = 6
+        JumpDescendingState = 6,
+        StompAttackState = 7
     }
 }

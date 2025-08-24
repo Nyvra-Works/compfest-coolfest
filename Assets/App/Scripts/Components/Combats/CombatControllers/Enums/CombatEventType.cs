@@ -4,6 +4,6 @@ public enum CombatEventType
     BasicAttack = 1,
     HeadbuttAttack = 2,
     ThrowAttack = 4,
-    DashAttack = 8  // contoh
+    StompAttack = 8,
 
 }

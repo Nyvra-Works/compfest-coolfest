@@ -107,6 +107,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310a6cfe485f4c6489411122425ad972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5069808178607559094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8395391030405285015}
+  - component: {fileID: 5733912974767456413}
+  m_Layer: 3
+  m_Name: Stomp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8395391030405285015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069808178607559094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7774922767753698664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5733912974767456413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069808178607559094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83574bcc325ebcc45a16f8c94eb111d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 8106608121568855223}
+  _force:
+    UseConstant: 1
+    ConstantValue: 100
+    Variable: {fileID: 0}
+  _stateContext: {fileID: 7225390949487596490}
 --- !u!1 &5958014822049687421
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +206,7 @@ Transform:
   - {fileID: 1490227515917523635}
   - {fileID: 3834433559455438111}
   - {fileID: 3712409291858675547}
+  - {fileID: 8395391030405285015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5367270232490568363
@@ -329,24 +380,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TargetsFinderForBasicAttack>k__BackingField: {fileID: 3862511606638262694}
   <TargetsFinderForSpecialAttack>k__BackingField: {fileID: 6115451128699144870}
-  _basicAttack:
-    <Damage>k__BackingField:
-      UseConstant: 1
-      ConstantValue: 1
-      Variable: {fileID: 0}
-    <Knockback>k__BackingField:
-      UseConstant: 1
-      ConstantValue: 5
-      Variable: {fileID: 0}
-    <ElevationMofifier>k__BackingField:
-      UseConstant: 1
-      ConstantValue: 1
-      Variable: {fileID: 0}
-  _headbuttAttack:
-    _damage:
-      UseConstant: 1
-      ConstantValue: 1
-      Variable: {fileID: 0}
+  _basicAttack: {fileID: 11400000, guid: c6508ba5f0b123248b8d63d9d4509fcf, type: 2}
+  _headbuttAttack: {fileID: 11400000, guid: f068289332421384db4e7ec8f692da23, type: 2}
+  _stompAttack: {fileID: 0}
   _stateContext: {fileID: 7225390949487596490}
 --- !u!114 &5569008744488766153
 MonoBehaviour:

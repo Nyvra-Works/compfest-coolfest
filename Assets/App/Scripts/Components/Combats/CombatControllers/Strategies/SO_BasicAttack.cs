@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class BasicAttack : IDamageDealer
+[CreateAssetMenu(fileName = "SO_BasicAttack", menuName = "Scriptable Objects/Combat/SO_BasicAttack")]
+public class SO_BasicAttack : SO_AbstractDamageDealerStrategy
 {
     [field: SerializeField] public FloatReference Damage { get; private set; }
     [field: SerializeField] public FloatReference Knockback { get; private set; }
     [field: SerializeField] public FloatReference ElevationMofifier { get; private set; }
 
-    public void DealDamage(Transform[] targets, Transform myTransform)
+    public override void DealDamage(Transform[] targets, Transform myTransform)
     {
         if (targets == null)
         {
@@ -34,7 +34,7 @@ public class BasicAttack : IDamageDealer
             // TODO
             target.GetComponent<ICombatReceiver>()?.ReceiveCombatEvent(
                 CombatEventType.BasicAttack
-            ); 
+            );
 
         }
     }

@@ -24,6 +24,10 @@ namespace StateMachines.Player.States
             {
                 context.TransitionToState(StateEnum.IdleState);
             }
+            if (context.CombatInput.IsSpecial3Attacking)
+            {
+                context.TransitionToState(StateEnum.StompAttackState);
+            }
         }
     }
 }

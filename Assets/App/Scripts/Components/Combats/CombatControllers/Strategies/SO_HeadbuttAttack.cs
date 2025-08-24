@@ -1,16 +1,16 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class HeadbuttAttack: IDamageDealer
+[CreateAssetMenu(fileName = "SO_HeadbuttAttack", menuName = "Scriptable Objects/Combat/SO_HeadbuttAttack")]
+public class SO_HeadbuttAttack : SO_AbstractDamageDealerStrategy
 {
     [SerializeField] FloatReference _damage;
     CombatEventType _combatEventType = CombatEventType.HeadbuttAttack;
     public FloatReference Damage => _damage;
 
-    public void DealDamage(Transform[] targets, Transform myTransform)
+    public override void DealDamage(Transform[] targets, Transform myTransform)
     {
-         if (targets == null)
+        if (targets == null)
         {
             return;
         }
@@ -22,7 +22,7 @@ public class HeadbuttAttack: IDamageDealer
             // send my enum
             target.GetComponent<ICombatReceiver>()?.ReceiveCombatEvent(
                 _combatEventType
-            ); 
+            );
 
         }
     }

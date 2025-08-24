@@ -41,6 +41,11 @@ namespace StateMachines.Player.States
                 Debug.Log("I am no longer ascending, transitioning to descending state.", context.gameObject);
                 context.TransitionToState(StateEnum.JumpDescendingState);
             }
+
+            if (context.CombatInput.IsSpecial3Attacking)
+            {
+                context.TransitionToState(StateEnum.StompAttackState);
+            }
         }
     }
 }

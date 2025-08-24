@@ -9,8 +9,9 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
 
 
     [Header("Attack Scripts")]
-    [SerializeField] private BasicAttack _basicAttack;
-    [SerializeField] private HeadbuttAttack _headbuttAttack;
+    [SerializeField] private SO_AbstractDamageDealerStrategy _basicAttack;
+    [SerializeField] private SO_AbstractDamageDealerStrategy _headbuttAttack;
+    [SerializeField] private SO_AbstractDamageDealerStrategy _stompAttack;
 
     [Header("State Machine Context")]
     [SerializeField] private MB_PlayerStateContext _stateContext;
@@ -22,6 +23,8 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
 
 
         _stateContext.HeadbuttStayAscendingHandler += HeadbuttAttackEventInvoked;
+
+        _stateContext.OnEnterStompAttackHandler += StompAttackEventInvoked;
     }
     void OnDisable()
     {
@@ -30,6 +33,8 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
         HeadbuttAttackEvent -= HeadbuttAttackEventInvoked;
 
         _stateContext.HeadbuttStayAscendingHandler -= HeadbuttAttackEventInvoked;
+
+        _stateContext.OnEnterStompAttackHandler -= StompAttackEventInvoked;
 
     }
 
@@ -52,6 +57,15 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
             return;
         }
         _headbuttAttack.DealDamage(targets?.ToArray(), transform);
+    }
+    void StompAttackEventInvoked()
+    {
+        var targets = TargetsFinderForSpecialAttack.Targets;
+        if (targets == null)
+        {
+            return;
+        }
+        _stompAttack.DealDamage(targets?.ToArray(), transform);
     }
 
 }

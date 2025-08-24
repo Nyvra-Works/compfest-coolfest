@@ -7,9 +7,11 @@ public class MB_CombatInput : MonoBehaviour
     // public Action BasicAttackEvent { get; set; }
     // public Action SpecialAttack1Event { get; set; }
     public Action SpecialAttack2Event { get; set; }
+    public Action SpecialAttack3Event { get; set; }
     public bool IsBasicAttacking { get; set; }
     public bool IsSpecial1Attacking { get; set; }
     public bool IsSpecial2Attacking { get; set; }
+    public bool IsSpecial3Attacking { get; set; }
 
     private void Update()
     {
@@ -34,5 +36,12 @@ public class MB_CombatInput : MonoBehaviour
             IsSpecial2Attacking = true;
         }
         else IsSpecial2Attacking = false;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SpecialAttack3Event?.Invoke();
+            // Debug.Log("Special Attack 3");
+            IsSpecial3Attacking = true;
+        }
+        else IsSpecial3Attacking = false;
     }
 }
