@@ -6,6 +6,7 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
     [Header("Targets Finders")]
     [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForBasicAttack { get; private set; }
     [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForSpecialAttack { get; private set; }
+    [field: SerializeField] public MB_TargetsFinderByLayer TargetsFinderForStompAttack { get; private set; }
 
 
     [Header("Attack Scripts")]
@@ -24,7 +25,7 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
 
         _stateContext.HeadbuttStayAscendingHandler += HeadbuttAttackEventInvoked;
 
-        _stateContext.OnEnterStompAttackHandler += StompAttackEventInvoked;
+        _stateContext.OnExitStompAttackHandler += StompAttackEventInvoked;
     }
     void OnDisable()
     {
@@ -34,7 +35,7 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
 
         _stateContext.HeadbuttStayAscendingHandler -= HeadbuttAttackEventInvoked;
 
-        _stateContext.OnEnterStompAttackHandler -= StompAttackEventInvoked;
+        _stateContext.OnExitStompAttackHandler -= StompAttackEventInvoked;
 
     }
 
@@ -60,7 +61,7 @@ public class MB_PlayerAlphaCombatController : MonoBehaviour
     }
     void StompAttackEventInvoked()
     {
-        var targets = TargetsFinderForSpecialAttack.Targets;
+        var targets = TargetsFinderForStompAttack.Targets;
         if (targets == null)
         {
             return;
