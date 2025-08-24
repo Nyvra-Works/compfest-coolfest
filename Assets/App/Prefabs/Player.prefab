@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8395391030405285015}
   - component: {fileID: 5733912974767456413}
   m_Layer: 3
-  m_Name: Stomp
+  m_Name: StompMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &798506269074776173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   <TargetsFinderForSpecialAttack>k__BackingField: {fileID: 6115451128699144870}
   _basicAttack: {fileID: 11400000, guid: c6508ba5f0b123248b8d63d9d4509fcf, type: 2}
   _headbuttAttack: {fileID: 11400000, guid: f068289332421384db4e7ec8f692da23, type: 2}
-  _stompAttack: {fileID: 0}
+  _stompAttack: {fileID: 11400000, guid: fd7ceafc94b34ac478a46c24b96a728c, type: 2}
   _stateContext: {fileID: 7225390949487596490}
 --- !u!114 &5569008744488766153
 MonoBehaviour:
