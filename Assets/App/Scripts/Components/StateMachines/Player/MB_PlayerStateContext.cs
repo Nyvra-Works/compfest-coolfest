@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using StateMachines.Player.States;
+using StateMachines;
 using UnityEngine;
 
-public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
+public class MB_PlayerStateContext : MB_AbstractStateContext<StateEnum, MB_PlayerStateContext>
 {
     [SerializeField] private StateEnum _initialState = StateEnum.IdleState;
     [Space]
@@ -23,7 +24,6 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     public MB_CombatInput CombatInput => combatInput;
     public MB_PlayerAlphaCombatController CombatController => combatController;
     public FloatReference BasicAttackSpeed => basicAttackSpeed;
-    public AbstractState<MB_PlayerStateContext> currentState { get; set; }
 
 
     [Header("## Collision Checker\n==================================================================")]
@@ -56,7 +56,7 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
     /// States of the machine, keyed with their respective StateEnum.
     /// </summary>
     /// <returns></returns>
-    public Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> States { get; protected set; } = new()
+    public override Dictionary<StateEnum, AbstractState<MB_PlayerStateContext>> StateMap { get; } = new()
     {
         { StateEnum.IdleState, new IdleState() },
         { StateEnum.MovingState, new MovingState() },
@@ -67,6 +67,7 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
         { StateEnum.JumpDescendingState, new JumpDescendingState() },
         {StateEnum.StompAttackState, new StompAttackState() }
     };
+
 
     /// 
     private void Start()
@@ -80,18 +81,13 @@ public class MB_PlayerStateContext : MB_AbstractContext<StateEnum>
         }
 
     }
-    private void Update()
-    {
-        // Update the current state
-        currentState?.UpdateExecute(this);
-    }
     public override void TransitionToState(StateEnum newState)
     {
         // Exit the current state if it exists
         currentState?.Exit(this);
 
         // Set the new state
-        currentState = States[newState];
+        currentState = StateMap[newState];
 
         // Enter the new state
         currentState.Enter(this);
