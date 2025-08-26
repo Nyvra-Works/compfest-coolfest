@@ -81,15 +81,15 @@ public class MB_PlayerStateContext : MB_AbstractStateContext<StateEnum, MB_Playe
         }
 
     }
-    public override void TransitionToState(StateEnum newState)
-    {
-        // Exit the current state if it exists
-        currentState?.Exit(this);
+    // public override void TransitionToState(StateEnum newState)
+    // {
+    //     // Exit the current state if it exists
+    //     currentState?.Exit(this);
 
-        // Set the new state
-        currentState = StateMap[newState];
+    //     // Set the new state
+    //     currentState = StateMap[newState];
 
-        // Enter the new state
-        currentState.Enter(this);
-    }
+    //     // Enter the new state
+    //     currentState.Enter(this);
+    // }
 }

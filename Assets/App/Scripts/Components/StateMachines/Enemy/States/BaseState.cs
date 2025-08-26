@@ -5,6 +5,5 @@ namespace StateMachines.Enemy.States
 
     public abstract class BaseState : AbstractState<MB_EnemyStateContext>
     {
-        public virtual void FixedUpdateExecute(MB_EnemyStateContext context){}
     }
 }

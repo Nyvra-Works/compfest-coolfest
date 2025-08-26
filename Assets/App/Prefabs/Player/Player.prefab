@@ -400,6 +400,7 @@ MonoBehaviour:
   _walkSpeed: 100
   _locomotory: {fileID: 798506269074776173}
   _characterControl: {fileID: 2818004447577944840}
+  _stateContext: {fileID: 7225390949487596490}
 --- !u!114 &6210451728417218801
 MonoBehaviour:
   m_ObjectHideFlags: 0

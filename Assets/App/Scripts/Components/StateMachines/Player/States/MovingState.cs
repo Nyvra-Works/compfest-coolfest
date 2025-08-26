@@ -23,10 +23,11 @@ namespace StateMachines.Player.States
         Vector3 lastDir ;
         public override void UpdateExecute(MB_PlayerStateContext context)
         {
-            // allow player to move
-            _playerMovement.UpdateInState();
             // send direction for animation handling
             // context.SetAnimationDirectionHandler?.Invoke(context.CharacterMovementControl.TargetDirection);
+
+            // allow player to move
+            // _playerMovement.UpdateInState();
             context.OnUpdateStateHandler?.Invoke(StateEnum.MovingState);
 
 
