@@ -5,7 +5,7 @@ public class FloatReference
 {
     public bool UseConstant = true;
     public float ConstantValue;
-    public SO_FloatVariable Variable;
+    public FloatVariable Variable;
 
     public FloatReference()
     { }
